@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id='content'>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+      <div class="content">
+        <h2 class='title page-title'>{{ article.title }}</h2>
+        <div class="field field-name-field-subtitle field-type-text field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even">
+              by {{ article.author }} on {{ article.date }}
+        </div></div></div> 
+        {% if article.img %}
+        <div class="field field-name-field-featured-image field-type-image field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even">
+              <a href="/{{ article.url }}" class="active">
+                <img src="{{ SITEURL }}/theme/img/{{ article.img }}" width="400" height="494" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        {{ article.content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
