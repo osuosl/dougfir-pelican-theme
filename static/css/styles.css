@@ -4760,11 +4760,11 @@ h2 {
   font-size: 22px;
   line-height: 32px; }
 
-#page-title {
+.page-title {
   font-size: 26px; }
 
-.front #page-title {
-  display: none; }
+.front .page-title {
+  /*display: none;*/ }
 
 h1, h2, h1 a {
   font-weight: normal; }
@@ -4966,7 +4966,7 @@ ul.contextual-links li a:hover, ul.contextual-links li a:active, ul.contextual-l
 #admin-menu {
   font-size: 70%; }
 
-.page-search #page-title {
+.page-search .page-title {
   display: none; }
 
 .page-search #osu-search-form .description {
