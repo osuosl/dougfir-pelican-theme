@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id='content'>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+      <div class="content">
+        <h1 class="title">OSU Open Source Lab Blog</h1>
+        {% for article in (articles_page.object_list if articles_page else articles) %}
+        <h2 class='title page-title'><a href='/{{ article.url }}'>{{ article.title }}</a></h2>
+        <div class="field field-name-field-subtitle field-type-text field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even">
+              by {{ article.author }} on {{ article.date }}
+        </div></div></div> 
+        {% if article.img %}
+        <div class="field field-name-field-featured-image field-type-image field-label-hidden">
+          <div class="field-items">
+            <div class="field-item even">
+              <a href="/{{ article.url }}" class="active">
+                <img src="/theme/img/{{ article.img }}" width="400" height="494" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {{ article.summary }}
+        <p><a href="/{{ article.url }}">Read more</a></p>
+        {% endfor %}
+
+        <ul class="pager">
+          {% if articles_page.has_previous() %}
+          <li class="pager-next"><a title="Go to next page" href="{{ SITEURL }}/{{ articles_previous_page.url }}">‹ newer</a></li>
+          {% endif %}
+          {% if articles_page.has_next() %}
+          <li class="pager-next"><a title="Go to next page" href="{{ SITEURL }}/{{ articles_next_page.url }}">older ›</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
