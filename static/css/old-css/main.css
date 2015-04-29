@@ -46,7 +46,7 @@ html {
   background-color: #252525;
 }
 body {
-  background: url('../images/bg-pattern.jpg') repeat #f4f2ec;
+  background: url('/theme/img/bg-pattern.jpg') repeat #f4f2ec;
 }
 #sidebar-first,
 #sidebar-second,

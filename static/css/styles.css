@@ -126,7 +126,7 @@ textarea {
   h2, h3 {
     page-break-after: avoid; } }
 body {
-  background-color: #f4f2ec;
+  /*background-color: #f4f2ec;*/
   background-image: url("/theme/img/bg-pattern.jpg") repeat scroll 0% 0% #f4f2ec;
   color: #252525;
   font-family: "Gudea",Arial,Verdana,sans-serif;
