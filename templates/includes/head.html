@@ -21,6 +21,7 @@
 <!--  <link type="text/css" rel="stylesheet" href="{{ SITEURL }}/theme/css/old-css/styles6-mega.css" media="all" />-->
   <link type="text/css" rel="stylesheet" href="{{ SITEURL }}/theme/css/old-css/styles7.css" media="all" />
   <link type="text/css" rel="stylesheet" href="{{ SITEURL }}/theme/css/old-css/styles8.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/js/slick/slick.css"/>
   <!-- These will insert some CSS to hide or show elements based on our theme settings -->
 <style type='text/css'> div.book-navigation { display: none;} </style>
 <style type='text/css'> div.terms { display: none;} </style>
@@ -40,24 +41,32 @@
     })();
   </script>
 
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js1.js"></script>
+<!--<script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js1.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js2.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js3.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/lightbox.js"></script>
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/feature_story.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/feature_story.js"></script>-->
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/slick/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+          $('.your-class').slick({
+                  setting-name: setting-value
+                    });
+          });
+</script>
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
 var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-537692-1"]);_gaq.push(["_setDomainName", "none"]);_gaq.push(["_setAllowLinker", true]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
 //--><!]]>
 </script>
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js4.js"></script>
+<!--<script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js4.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js5.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js6.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js7.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js8.js"></script>
 <script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/js9.js"></script>
-<script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/timer.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/theme/js/js-old/timer.js"></script>-->
 <!--Google Analytics Script. May not work without drupal-->
 <script type='text/javascript'>
     var _gaq = _gaq || [];
