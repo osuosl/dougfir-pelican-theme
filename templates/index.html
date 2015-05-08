@@ -1,7 +1,54 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+
+<div id="features">
+    <div class='region region-features'>
+        <div id="block-views-feature-story-block" class="block block-views">
+            <div class="content">
+                <div class="view view-feature-story view-id-feature_story view-display-id-block">
+                    <div class='view-content'>
+                        {% for article in articles[:5] %}
+                        <div class="fs-row views-row active">
+                            <div class="views-field views-field-field-picture">
+                                <div class="field-content">
+                                    <a href="{{ article.url }}">
+                                        <img width="1200" height="564" alt="" src="http://colorvisiontesting.com/images/plate%20with%205.jpg"></img>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="views-field views-field-field-caption">
+
+                                <div class="field-content">
+                                    <h3 class="fs-title">
+                                        <a href="{{ article.url }}">
+                                            {{ article.title }}
+                                        </a>
+                                    </h3>
+                                    <p class="fs-caption">
+                                        {{ article.summary }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <a class="side-controls previous">
+                            <i class="icon-chevron-left"></i>
+                        </a>
+                        <a class="side-controls next">
+                            <i class='icon-chevron-right'></i>
+                        </a>
+                    </div>
+                    <div class="more-link">
+                        <a href="{{ SITEURL }}/blog">
+                            All Stories
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <h2>Oregon State University Open Source Lab</h2>
 
 <p>The Open Source Lab is an organization working for the advancement of open source technologies.
