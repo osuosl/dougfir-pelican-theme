@@ -40,11 +40,15 @@
 }
 #block-views-feature-story-block .view-feature-story .views-field-field-caption {
     background-color: rgba(255, 255, 255, 0.8);
-    bottom: 0;
     max-height: 150px;
+    width: auto;
     overflow: hidden;
-    position: absolute;
+    position: relative;
+    left:0px;
+    bottom: 50px;
+    z-index: 100;
     width: 100%;
+    transition: 1s ease;
 }
 .ie #block-views-feature-story-block .view-feature-story .views-field-field-caption {
 }
@@ -78,17 +82,17 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
     border-radius: 2px;
     bottom: 6px;
     box-shadow: 0 1px 2px #ccc;
-    display: block;
+    /*display: block;*/
     padding: 0 0.2em 0.2em 0;
     position: absolute;
     right: 25px;
     text-align: center;
     width: 75px;
-    z-index: 3;
+    z-index: 103;
 }
 #block-views-feature-story-block .view-feature-story .more-link a {
     color: #252525;
-    display: block;
+    /*display: block;*/
     font-size: 80%;
     font-weight: bold;
     text-align: center;
@@ -139,6 +143,7 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
 }
 .view-feature-story.view-display-id-block .fs-row:hover .views-field-field-caption {
     height: 135px;
+    transform: translateY(-100px);
 }
 .view.view-feature-story.view-id-feature_story.view-display-id-page .views-row {
     clear: left;
