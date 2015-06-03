@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html class="doug_fir" lang="en">
 <head>
-    {% include 'includes/head.html' %}
+{% include 'includes/head.html' %}
 </head>
 <body class="html front not-logged-in one-sidebar sidebar-first page-node " >
 {% include 'includes/top-hat.html' %}
@@ -9,7 +9,7 @@
     <div id="skip-link">
     <a href="#content" class="element-invisible element-focusable">Skip to main content</a>
     </div>-->
-    {% include 'includes/menu.html' %}
+{% include 'includes/menu.html' %}
 <div class='row'>
     <div class='row span9'>
         {% block content %}
@@ -19,6 +19,20 @@
 </div>
 </div>
     {% include 'includes/footer.html'%}
+    {% include 'includes/scripts.html' %}
+    <script>
+$(document).ready(function(){
+        $('.front-page-story').slick({
+autoplay:true,
+autoplaySpeed:5000,
+dots: true,
+ease: true,
+prevArrow: $('#prev'),
+nextArrow: $('#next')
+});
+        });
+    </script>
+
 </body>
 </html>
-    
+
