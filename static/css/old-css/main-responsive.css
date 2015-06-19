@@ -222,7 +222,7 @@ img {
   #header h1 {
     padding-top: .1em;
     /* padding-left: 135px; */
-  
+
   }
 }
 @media (max-width: 767px) {
@@ -233,7 +233,7 @@ img {
   html body.admin-menu {
     margin-top: 0 !important;
     /*remove top margin along with menu*/
-  
+
   }
   a.m-icon-link {
     padding: 11px 13px 9px;
@@ -520,7 +520,7 @@ img {
     display: block;
     filter: none;
     /* removes filter from ie9 */
-  
+
   }
   ul.quicktabs-tabs.quicktabs-style-basic {
     height: auto;
@@ -551,7 +551,7 @@ img {
     position: static;
     padding-bottom: 25px;
     /* to make room for all stories link */
-  
+
   }
   .view-feature-story .side-controls {
     top: 20%;

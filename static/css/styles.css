@@ -1800,8 +1800,14 @@ a .icon-rotate-90::before, a .icon-rotate-180::before, a .icon-rotate-270::befor
 .icon-chevron-left::before {
   content: ""; }
 
+.icon-chevron-left {
+  content: url(/theme/img/chevron-left-24.png); }
+
 .icon-chevron-right::before {
   content: ""; }
+
+.icon-chevron-right {
+  content: url(/theme/img/chevron-right-24.png); }
 
 .icon-plus-sign::before {
   content: ""; }
@@ -5263,7 +5269,7 @@ ul.nice-menu-down li ul li ul {
 #main-menu .nice-menu li li {
   border: medium none;
   margin-right: 6px;
-  padding: 4px 0; }
+  padding: 4px 0px 0px 15px; }
 
 #main-menu .nice-menu li li a {
   border-radius: 4px;
