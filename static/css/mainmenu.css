@@ -1,0 +1,115 @@
+#main-menu .menu, #main-menu .nice-menu {
+  background-color: #373737;
+  border-radius: 4px;
+  float: none;
+  font-size: 14px;
+  margin: 1em 0;
+  z-index: 200; }
+
+#main-menu .content {
+  padding: 0; }
+
+#main-menu .menu {
+  height: 100%;
+  min-height: 38px; }
+
+.ie7 #main-menu .nice-menu, .ie7 #main-menu .menu {
+  min-height: 25px; }
+
+#main-menu .menu li, #main-menu .nice-menu > li {
+  border: medium none;
+  float: left;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0; }
+
+#main-menu .menu li a, #main-menu .nice-menu > li > a {
+  color: #fff;
+  display: inline-block;
+  padding: 10px 16px;
+  text-decoration: none; }
+
+#main-menu .nice-menu a, #main-menu .nice-menu a:visited {
+  color: #fff; }
+
+#main-menu .nice-menu > ul {
+  top: 2.3em; }
+
+ul.nice-menu ul {
+  border: 0 none; }
+
+#main-menu ul.nice-menu-down li, #main-menu ul.nice-menu-down li:hover, #main-menu ul.nice-menu-down li.menuparent, #main-menu ul.nice-menu-down li.menuparent:hover {
+  background-color: transparent;
+  background-image: none; }
+
+ul.nice-menu ul li {
+  width: 14em; }
+
+ul.nice-menu-down li ul li ul {
+  left: 14em; }
+
+#main-menu .nice-menu > li > a, #main-menu .menu a {
+  border-right: 1px solid #000; }
+
+#main-menu .nice-menu > li.last > a, #main-menu .menu li.last a {
+  border-right: medium none; }
+
+#main-menu .nice-menu > li.menuparent > a {
+  background: url("/theme/img/h-menu-arrow-down.png") no-repeat scroll right center transparent;
+  padding-right: 32px; }
+
+#main-menu .nice-menu > li.menuparent:hover > a, #main-menu .nice-menu > li.menuparent > a:hover, #main-menu .nice-menu > li.menuparent > a:active, #main-menu .nice-menu > li.menuparent > a:focus {
+  background-color: #4b4b4b; }
+
+#main-menu .nice-menu > li.over > a, #main-menu .nice-menu > li > a:hover, #main-menu .nice-menu > li > a:active, #main-menu .nice-menu > li > a:focus, #main-menu .menu li a:hover, #main-menu .menu li a:active, #main-menu .menu li a:focus {
+  background-color: #4b4b4b;
+  color: #fff; }
+
+#main-menu .nice-menu > li > ul {
+  background-color: #5c5c5c;
+  margin-top: 13px; }
+
+#main-menu .nice-menu > li > ul > li > a:hover, #main-menu .nice-menu > li > ul > li > a:active, #main-menu .nice-menu > li > ul > li > a:focus {
+  color: #fff; }
+
+#main-menu .nice-menu li li.menuparent > a {
+  background: url("/theme/img/h-menu-arrow-right.png") no-repeat scroll 97% center transparent;
+  padding-right: 20px; }
+
+#main-menu .nice-menu li li.menuparent > a:hover, #main-menu .nice-menu li li.menuparent > a:active, #main-menu .nice-menu li li.menuparent > a:focus {
+  background-image: url("/theme/img/h-menu-arrow-right-hover.png"); }
+
+#main-menu .nice-menu ul {
+  overflow: hidden;
+  padding: 8px; }
+
+#main-menu .nice-menu li li {
+  border: medium none;
+  margin-right: 6px;
+  padding: 4px 0px 0px 15px; }
+
+#main-menu .nice-menu li li a {
+  border-radius: 4px;
+  text-decoration: none; }
+
+#main-menu .nice-menu li li a:hover, #main-menu .nice-menu li li a:active, #main-menu .nice-menu li li a:focus, #main-menu .nice-menu li li.over a {
+  background-color: #4b4b4b; }
+
+#main-menu .nice-menu ul ul {
+  border: medium none;
+  margin-left: 14px; }
+
+#main-menu .nice-menu ul ul, #main-menu .nice-menu li li.over li a {
+  background-color: #626262; }
+
+#main-menu .nice-menu li li.over li a:hover, #main-menu .nice-menu li li.over li a:active, #main-menu .nice-menu li li.over li a:focus, #main-menu .nice-menu li li li.over a {
+  background-color: #4b4b4b; }
+
+#main-menu .nice-menu ul ul ul, #main-menu .nice-menu li li li.over li a {
+  background-color: #696969; }
+
+#main-menu .nice-menu li li li.over li a:hover, #main-menu .nice-menu li li li.over li a:active, #main-menu .nice-menu li li li.over li a:focus, #main-menu .nice-menu li li li li.over a {
+  background-color: #4b4b4b; }
+
+#audience-menu {
+  display: none; }
