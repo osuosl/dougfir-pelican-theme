@@ -43,9 +43,9 @@
     max-height: 150px;
     width: auto;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     left:0px;
-    bottom: 50px;
+    bottom: 0px;
     z-index: 100;
     width: 100%;
     transition: 1s ease;

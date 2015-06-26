@@ -5427,4 +5427,15 @@ ul.nice-menu-down li ul li ul {
 
 .side-blog-list{
   text-align: left; }
+
+.summary-image{
+  vertical-align: bottom;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.fs-row{
+  position: relative;
+}
 /*# sourceMappingURL=styles.css.map */
