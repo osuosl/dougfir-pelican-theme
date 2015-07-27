@@ -12,7 +12,6 @@
     padding: 0 0.2em;
 }
 #osu-top-hat #osu-search-top-hat-form .form-submit {
-    background: url("/theme/img/search_icon_white.png") no-repeat scroll 10px 4px #c34500;
     border: medium none;
     border-radius: 0 12px 12px 0;
     box-shadow: none;

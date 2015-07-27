@@ -4837,7 +4837,7 @@ a:hover, a:active, a:focus {
 
 ul li {
   line-height: 20px;
-  list-style-image: url(http://osuosl.org/sites/wwwstaging.osuosl.org/themes/doug_fir/images/bullet.png);
+  list-style-image: url(/theme/img/bullet.png);
   list-style-type: none;
   margin-bottom: 6px; }
 
