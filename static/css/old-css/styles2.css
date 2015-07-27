@@ -117,7 +117,7 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
     width: 25px;
 }
 .view-feature-story .side-controls:hover, .view-feature-story .side-controls:active, .view-feature-story .side-controls:focus {
-    background: none repeat scroll 0 0 #676767;
+    background: none repeat scroll 0 0 black;
     opacity: 1;
 }
 .view-feature-story .side-controls:hover i {
