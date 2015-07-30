@@ -12,7 +12,7 @@
             </div>
           </div>
         </div>
-        <form class="webform-client-form" enctype="multipart/form-data" action="" method=post id="webform-client-form-535" accept-charset="UTF-8">
+        <form class="webform-client-form" enctype="multipart/form-data" action="http://localhost:5000" method=post id="webform-client-form-535" accept-charset="UTF-8">
           <div class="form-item webform-component webform-component-textfield" id="webform-component-name">
             <label for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
             <input type="text" id="edit-submitted-name" name="name" value="" size="60" maxlength="128" class="form-text required" />
@@ -60,6 +60,10 @@
             <div class="description">We realize that most projects are not in a position to help cover the costs, but any contribution certainly helps!</div>
           </div>
           <div class="form-actions form-wrapper" id="edit-actions">
+            <input type="hidden" id="edit-submit-tokn" name="tokn" value="1234567890-=" class="form-text" />
+            <input type="hidden" id="edit-submit-empt" name="hidden" value="" class="form-text" />
+            <input type="hidden" id="edit-submit-red" name="redirect" value="http://www.osuosl.org" class="form-text" />
+            <input type="hidden" id="edit-submit-mail-sub" name="mail_subject" value="FORM: New Hosting Request" class="form-text" />
             <input type="submit" id="edit-submit" name="op" value="Submit" class="form-submit" />
           </div>
         </div>
