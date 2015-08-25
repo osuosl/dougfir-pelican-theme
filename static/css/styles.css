@@ -62,7 +62,7 @@ img {
   padding-right: 10px;
   padding-bottom: 10px; }
 
-img.align-center {
+.align-center {
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -81,6 +81,15 @@ img.align-right {
 img.align-left {
   display: block;
   float: left; }
+
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: .9em;
+  font-style: bold;
+}
 
 #map_canvas img, .google-maps img {
   max-width: none; }
