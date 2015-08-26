@@ -6,10 +6,10 @@
             </div>
         </div>
         <div id="block-views-categories-block" class="block block-views">
-          <h2>Blog Posts</h2></li>
+          <h2>Recent Stories</h2></li>
             <div class="content">
               <ul>
-              {% for article in articles %}
+              {% for article in articles[:15] %}
                 <li class="views-row side-blog-list"><a href='/{{ article.url }}'>{{ article.title }}</a></li>
               {% endfor %}
             </ul>
