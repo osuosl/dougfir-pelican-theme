@@ -56,7 +56,40 @@ img {
   height: auto;
   max-width: 100%;
   max-height: 470px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px; }
+
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+img.align-center-white {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: grey;
+}
+
+img.align-right {
+  display: block;
+  float: right; }
+
+img.align-left {
+  display: block;
+  float: left; }
+
+.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: .9em;
+  font-style: bold;
+}
 
 #map_canvas img, .google-maps img {
   max-width: none; }
@@ -387,7 +420,8 @@ a:hover, a:focus {
 
 .container {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .container::before, .container::after {
   content: "";
@@ -1783,8 +1817,14 @@ a .icon-rotate-90::before, a .icon-rotate-180::before, a .icon-rotate-270::befor
 .icon-chevron-left::before {
   content: ""; }
 
+.icon-chevron-left {
+  content: url(/theme/img/chevron-left-24.png); }
+
 .icon-chevron-right::before {
   content: ""; }
+
+.icon-chevron-right {
+  content: url(/theme/img/chevron-right-24.png); }
 
 .icon-plus-sign::before {
   content: ""; }
@@ -4813,7 +4853,7 @@ a:hover, a:active, a:focus {
 
 ul li {
   line-height: 20px;
-  list-style-image: none;
+  list-style-image: url(/theme/img/bullet.png);
   list-style-type: none;
   margin-bottom: 6px; }
 
@@ -5246,7 +5286,7 @@ ul.nice-menu-down li ul li ul {
 #main-menu .nice-menu li li {
   border: medium none;
   margin-right: 6px;
-  padding: 4px 0; }
+  padding: 4px 0px 0px 15px; }
 
 #main-menu .nice-menu li li a {
   border-radius: 4px;
@@ -5401,4 +5441,16 @@ ul.nice-menu-down li ul li ul {
 .ui-accordion a {
   color: #c34500; }
 
+.side-blog-list{
+  text-align: left; }
+
+.summary-image{
+  position: absolute;
+  top: 30%;
+  transform: translate(0, -30%);
+}
+
+.fs-row{
+  position: relative;
+}
 /*# sourceMappingURL=styles.css.map */

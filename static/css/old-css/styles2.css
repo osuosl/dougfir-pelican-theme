@@ -40,12 +40,12 @@
 }
 #block-views-feature-story-block .view-feature-story .views-field-field-caption {
     background-color: rgba(255, 255, 255, 0.8);
-    max-height: 150px;
+    max-height: 120px;
     width: auto;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     left:0px;
-    bottom: 50px;
+    bottom: 100px;
     z-index: 100;
     width: 100%;
     transition: 1s ease;
@@ -117,7 +117,7 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
     width: 25px;
 }
 .view-feature-story .side-controls:hover, .view-feature-story .side-controls:active, .view-feature-story .side-controls:focus {
-    background: none repeat scroll 0 0 #676767;
+    background: none repeat scroll 0 0 black;
     opacity: 1;
 }
 .view-feature-story .side-controls:hover i {
@@ -135,7 +135,7 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
     padding-right: 6px;
 }
 .view-feature-story.view-display-id-block .fs-row .views-field-field-caption .fs-title {
-    margin: 0 100px 8px 0;
+    margin: 0px 100px 8px 0;
 }
 .view-feature-story.view-display-id-block .fs-row .views-field-field-caption {
     height: 40px;
@@ -143,7 +143,7 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
 }
 .view-feature-story.view-display-id-block .fs-row:hover .views-field-field-caption {
     height: 135px;
-    transform: translateY(-100px);
+    transform: translateY(-90px);
 }
 .view.view-feature-story.view-id-feature_story.view-display-id-page .views-row {
     clear: left;
@@ -306,7 +306,6 @@ div.n td, #querystats td {
     padding: 0 0.2em;
 }
 #osu-top-hat #osu-search-top-hat-form .form-submit {
-    background: url("/theme/img/search_icon_white.png") no-repeat scroll 10px 4px #c34500;
     border: medium none;
     border-radius: 0 12px 12px 0;
     box-shadow: none;
@@ -315,10 +314,11 @@ div.n td, #querystats td {
     margin: 0;
     width: 40px;
 }
-#osu-top-hat #osu-search-top-hat-form .form-submit {
+.fa-search {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 14px;
+    top: 6px;
+    color: white;
 }
 .ie #osu-top-hat #osu-search-top-hat-form .form-submit {
     filter: none;
@@ -356,7 +356,9 @@ div.n td, #querystats td {
     margin-top: 0;
 }
 #osu-top-hat {
-    background: -moz-linear-gradient(center top , rgba(86, 86, 86, 1) 0%, rgba(37, 37, 37, 1) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: -moz-linear-gradient(center top , rgba(86, 86, 86, 1) 0%, rgba(37, 37, 37, 1) 100%) repeat scroll;
+    background-color: rgba(37, 37, 37, 1);
+    background-image: linear-gradient(center top, rgba(86, 86, 86, 1), rgba(37, 37, 37, 1)) repeat scroll;
     border-bottom: 3px solid #dbd6d0;
     font-family: "Gudea",Arial,Helvetica,Verdana,sans-serif;
     font-size: 13px;
@@ -364,6 +366,7 @@ div.n td, #querystats td {
     width: 100%;
 }
 .ie #osu-top-hat {
+  background-color: rgba(37, 37, 37, 1);
 }
 #osu-top-hat a {
     border-radius: 10px;
@@ -685,4 +688,3 @@ div.password-suggestions ul {
 .ibimage_right {
     float: right;
 }
-

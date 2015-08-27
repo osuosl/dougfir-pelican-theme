@@ -15,7 +15,7 @@
         {% block content %}
         {% endblock content %}
     </div>
-    {% include 'includes/sidebar.html'%}
+    {% include ('includes/blog-sidebar.html' if articles_page or article else 'includes/people-sidebar.html' if people else 'includes/sidebar.html') %}
 </div>
 </div>
     {% include 'includes/footer.html'%}
@@ -35,4 +35,3 @@ nextArrow: $('#next')
 
 </body>
 </html>
-

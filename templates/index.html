@@ -11,7 +11,7 @@
                         {% for article in articles[:5] %}
                         <div class='fs-row'>
                             <a href="{{ article.url }}">
-                                <img width="1200" height="564" alt="" src="{{ SITEURL }}/theme/img/{{ article.img}} "></img>
+                                <img class='summary-image' width="705" height="564" alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
                             </a>
                             <div class="views-field-field-caption">
                                 <h3 class="fs-title">
@@ -20,14 +20,13 @@
                                     </a>
                                 </h3>
                                 <p class="fs-caption">
-                                {% set summary = article.content | truncate(100) %}
+                                {% set summary = article.content | truncate(400) %}
                                 {{ summary }}
                                 </p>
                             </div>
                         </div>
                         {% endfor %}
 
-                        <div style="clear: both;"></div>
                     </div>
 
                     <a id='prev' class="side-controls previous slick-prev">

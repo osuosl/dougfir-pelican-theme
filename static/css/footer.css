@@ -1,0 +1,100 @@
+#footer {
+  background: -moz-linear-gradient(center top, #39393a 0%, #252525 100%) repeat scroll 0 0 transparent;
+  border-top: 4px solid #dbd6d0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 148px;
+  padding: 20px 0 20px 20px; }
+
+#footer p {
+  font-size: 14px; }
+
+#footer ul {
+  margin-left: 10px; }
+
+#footer ul li {
+  list-style-image: none; }
+
+#footer h2, #footer h3 {
+  color: #fff;
+  font-size: 120%;
+  margin-top: 0; }
+
+#footer a {
+  color: #fff; }
+
+#footer a:hover, #footer a:active, #footer a:focus {
+  background-color: #666;
+  border-radius: 3px;
+  text-decoration: none; }
+
+#footer .block-menu {
+  float: left; }
+
+#footer .block-menu + .block-menu {
+  margin-left: 10px; }
+
+#footer .block-menu a {
+  font-size: 13px;
+  text-decoration: none; }
+
+#footer .block-menu .content {
+  padding: 0;
+}
+
+#footer .menu-block-wrapper > .menu > li {
+  float: left;
+  margin-left: 8px;
+  max-width: 10.2em; }
+
+#footer .menu-block-wrapper > .menu > li.first {
+  margin-left: 0; }
+
+#footer .menu-block-wrapper > .menu > li > a {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+#footer .content > .menu > li {
+  float: left;
+  margin-left: 8px;
+  max-width: 10.2em; }
+
+#footer .content > .menu > li.first {
+  margin-left: 0; }
+
+#footer .content > .menu > li > a {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+#footer .menu-block-wrapper > .menu li, #footer .menu-block-wrapper > .menu li.expanded, #footer .content > .menu li, #footer .content > .menu li.expanded {
+  list-style-image: none;
+  list-style-type: none; }
+
+#footer .menu {
+  margin-left: 0;
+  overflow: auto; }
+
+#footer .menu li {
+  margin-left: 3px; }
+
+#footer .menu a {
+  display: block;
+  padding-left: 3px;
+  text-decoration: none; }
+
+#footer ul a {
+  display: block;
+  padding-left: 3px;
+  text-decoration: none; }
+
+#footer .social-media {
+  padding-top: 5px; }
+
+#footer .social-media a {
+  display: block;
+  text-decoration: none; }
+
+#footer .social-media i {
+  font-size: 18px;
+  padding-right: 3px; }
