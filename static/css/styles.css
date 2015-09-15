@@ -5453,4 +5453,9 @@ ul.nice-menu-down li ul li ul {
 .fs-row{
   position: relative;
 }
+
+.no-breaks{
+  display: table-row;
+  width: 100%;
+}
 /*# sourceMappingURL=styles.css.map */
