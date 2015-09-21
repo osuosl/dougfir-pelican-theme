@@ -52,10 +52,21 @@
         <label class='menu-button' for='check'>Menu</label>
     <ul>
         <li><a href='{{ SITEURL }}'>Home</a></li>
-        {% for page in pages |sort(attribute="order")%}
-        {% if page.type == 'page' %}
-        <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
-        {% endif %}
+        {% for page in pages | sort(attribute="order") %}
+          {% if page.menu == 'parent' %}
+            <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+          {% endif %}
+
+          {% if page.menu_child %}
+            <ul>
+            {% for pchild in pages | sort(attribute="order") %}
+              {% if pchild.menu_parent == page.menu_child %}
+                  <li> <!-- DO SOMETHING --> </li> 
+              {% endif %}
+            {% endfor %}
+            </ul>
+          {% endif %}
+
         {% endfor %}
         <li><a href='#schedule'>Schedule <span class='arrow'>&#9660;<span></a>
                 <ul>
