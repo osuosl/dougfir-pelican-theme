@@ -47,36 +47,52 @@
 </li>
 </ul>
 <!-- Main menu navbar -->
-<div class='main-menu'>
-        <input id='check' type=checkbox></input>
-        <label class='menu-button' for='check'>Menu</label>
-    <ul>
-        <li><a href='{{ SITEURL }}'>Home</a></li>
-        {% for page in pages | sort(attribute="order") %}
-          {% if page.menu == 'parent' %}
-            <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
-          {% endif %}
+<div id='main-menu' role='navigation'>
+  <div class="region region-nav">
+    <div id="block-nice-menus-1" class="block block-nice-menus">
+      <div class="content">
+        <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
+          <li><a href='{{ SITEURL }}'>Home</a></li>
+          {% for page in pages | sort(attribute="order") %}
+            {% if page.menu == 'parent' %}
+              <li class="menuparent"><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+            {% elif page.menu %}
+              <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+            {% endif %}
 
-          {% if page.menu_child %}
-            <ul>
-            {% for pchild in pages | sort(attribute="order") %}
-              {% if pchild.menu_parent == page.menu_child %}
-                  <li> <!-- DO SOMETHING --> </li> 
-              {% endif %}
-            {% endfor %}
-            </ul>
-          {% endif %}
+            <!-- If page has a child, create a list then inspect each page to see
+                 if it is a child of this page, then write to html -->
+            {% if page.menu_child %}
+              <ul>
+              {% for pchild in pages | sort(attribute="order") %}
+                {% if pchild.menu_parent == page.menu_child and pchild.menu_gchild %}
+                  <li class="menuparent"><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+                {% elif pchild.menu_parent == page.menu_child %}
+                  <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
 
-        {% endfor %}
-        <li><a href='#schedule'>Schedule <span class='arrow'>&#9660;<span></a>
-                <ul>
-                    {% for p in pages |sort(attribute="order")%}
-                    {% if p.type == 'schedule' %}
-                    <li><a href='#{{ p.slug }}'>{{ p.title }}</a></li>
-                    {% endif %}
+                  <!-- If child has a child (gchild), create a list then inspect
+                       each page to see if it is a child of this page, then write
+                       to html -->
+                  {% if pchild.menu_gchild %}
+                    <ul>
+                    {% for pgchild in pages | sort(attribute="order") %}
+                      {% if pgchild.menu_parent == pchild.menu_gchild %}
+                        <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+                      {% endif %}
                     {% endfor %}
-                </ul>
-                </li>
-            </ul>
-        </div>
+                   </ul>
+                  {% endif %}
+
+                {% endif %}
+              {% endfor %}
+              </ul>
+            {% endif %}
+
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- /#main-menu -->
