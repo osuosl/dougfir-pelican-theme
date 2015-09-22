@@ -52,42 +52,38 @@
     <div id="block-nice-menus-1" class="block block-nice-menus">
       <div class="content">
         <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
-          <li><a href='{{ SITEURL }}'>Home</a></li>
-          {% for page in pages | sort(attribute="order") %}
-            {% if page.menu == 'parent' %}
-              <li class="menuparent"><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
-            {% elif page.menu %}
-              <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
-            {% endif %}
-
+          <li class="menu-217 menu-path-front first odd"><a href='/' class="active">Home</a></li>
+          {% for page in pages | sort(attribute='order') %}
+            {% if page.top_menu == 'parent' %}
+              <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
             <!-- If page has a child, create a list then inspect each page to see
                  if it is a child of this page, then write to html -->
-            {% if page.menu_child %}
               <ul>
-              {% for pchild in pages | sort(attribute="order") %}
-                {% if pchild.menu_parent == page.menu_child and pchild.menu_gchild %}
-                  <li class="menuparent"><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+              {% for pchild in pages | sort(attribute='order') %}
+                {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
+                  <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
                 {% elif pchild.menu_parent == page.menu_child %}
-                  <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
-
+                  <li class="menuparent"><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a>
                   <!-- If child has a child (gchild), create a list then inspect
                        each page to see if it is a child of this page, then write
                        to html -->
                   {% if pchild.menu_gchild %}
                     <ul>
-                    {% for pgchild in pages | sort(attribute="order") %}
+                    {% for pgchild in pages | sort(attribute='order') %}
                       {% if pgchild.menu_parent == pchild.menu_gchild %}
-                        <li><a href='#{{ page.slug }}'>{{ page.title }}</a></li>
+                        <li><a href='/{{ pgchild.slug }}'>{{ pgchild.title }}</a></li>
                       {% endif %}
                     {% endfor %}
                    </ul>
+                   </li>
                   {% endif %}
-
                 {% endif %}
               {% endfor %}
               </ul>
+              </li>
+            {% elif page.top_menu%}
+              <li><a href='/{{ page.slug }}'>{{ page.title }}</a></li>
             {% endif %}
-
           {% endfor %}
 
         </ul>
