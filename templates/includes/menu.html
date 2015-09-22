@@ -56,9 +56,12 @@
           {% for page in pages | sort(attribute='order') %}
             {% if page.top_menu == 'parent' %}
               <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
+              <ul>
+              {% if page.duplicate_name %}
+                <li><a href='/{{ page.slug }}'>{{ page.duplicate_name }}</a></li>
+              {% endif %}
             <!-- If page has a child, create a list then inspect each page to see
                  if it is a child of this page, then write to html -->
-              <ul>
               {% for pchild in pages | sort(attribute='order') %}
                 {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
                   <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
