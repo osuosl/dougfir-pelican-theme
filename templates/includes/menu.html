@@ -1,97 +1,106 @@
 <div id='page-wrapper' class='container'>
-    <div id='header' class='row-fluid'>
-        <a class="parent" href='http://eecs.oregonstate.edu'>School of Electrical Engineering and Computer Science</a>
-        <h1><a href='/'>OSU Open Source Lab</a></h1>
-    </div>
+<div id='header' class='row-fluid'>
+    <a class="parent" href='http://eecs.oregonstate.edu'>School of Electrical Engineering and Computer Science</a>
+    <h1><a href='/'>{{ SITENAME }}</a></h1>
+</div>
 <ul id="mobile-menu" role="navigation">
     <li id="mobile-main-menu">
         <ul class="menu">
             <li class="first leaf"><a href="/" class="active">Home</a></li>
-            <li class="expanded"><a href="/about">About Us</a><ul class="menu"><li class="first collapsed"><a href="/about">Summary</a></li>
-            <li class="leaf"><a href="/about/people">Staff</a></li>
-            <li class="leaf"><a href="/about/employment">Employment</a></li>
-            <li class="leaf"><a href="/devopsbootcamp">DevOps BootCamp</a></li>
-            <li class="leaf"><a href="/about/advisors">Advisors</a></li>
-            <li class="leaf"><a href="/contact">Contact</a></li>
-            <li class="leaf"><a href="/about/logos">Open Source Lab logos</a></li>
-            <li class="last leaf"><a href="/about/goscon">GOSCON</a></li>
+            {% for page in pages | sort(attribute='order') %}
+            {% if page.top_menu == 'parent' %}
+            <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
+                <ul>
+                    {% if page.duplicate_name %}
+                    <li><a href='/{{ page.slug }}'>{{ page.duplicate_name }}</a></li>
+                    {% endif %}
+                    <!-- If page has a child, create a list then inspect each page to see
+                        if it is a child of this page, then write to html -->
+                        {% for pchild in pages | sort(attribute='order') %}
+                        {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
+                        <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
+                        {% elif pchild.menu_parent == page.menu_child %}
+                        <li class="menuparent"><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a>
+                            <!-- If child has a child (gchild), create a list then inspect
+                                each page to see if it is a child of this page, then write
+                                to html -->
+                                {% if pchild.menu_gchild %}
+                                <ul>
+                                    {% for pgchild in pages | sort(attribute='order') %}
+                                    {% if pgchild.menu_parent == pchild.menu_gchild %}
+                                    <li><a href='/{{ pgchild.slug }}'>{{ pgchild.title }}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                        </li>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                </ul>
+            </li>
+            {% elif page.top_menu%}
+            <li><a href='/{{ page.slug }}'>{{ page.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+
         </ul>
     </li>
-    <li class="leaf"><a href="/blog">Blog</a></li>
-    <li class="expanded"><a href="/services">Services</a>
+    <li id="mobile-osu-top-hat">
         <ul class="menu">
-            <li class="first collapsed"><a href="/services/hosting">Hosting</a></li>
-            <li class="leaf"><a href="/services/development">Development</a></li>
-            <li class="collapsed"><a href="/request-hosting">Request Hosting</a></li>
-            <li class="collapsed"><a href="/services/powerdev">PowerLinux / OpenPOWER Development Hosting</a></li>
-            <li class="last collapsed"><a href="/services/supercell">Supercell</a></li>
+            <li class="first leaf"><a href="http://calendar.oregonstate.edu">Calendar</a></li>
+            <li class="leaf"><a href="http://osulibrary.oregonstate.edu">Library</a></li>
+            <li class="leaf"><a href="http://oregonstate.edu/campusmap">Maps</a></li>
+            <li class="leaf"><a href="http://oregonstate.edu/main/online-services">Online Services</a></li>
+            <li class="last leaf"><a href="https://securelb.imodules.com/s/359/campaign/index.aspx?sid=359&amp;gid=34&amp;pgid=1982&amp;cid=3007" class="campaign">Make a Gift</a></li>
         </ul>
     </li>
-    <li class="leaf"><a href="wiki.osuosl.org/gsoc/">GSoC</a></li>
-    <li class="last expanded"><a href="/donate">Donate</a>
-        <ul class="menu">
-            <li class="first leaf"><a href="/sponsors">Sponsors</a></li>
-            <li class="last leaf"><a href="/donate/why-do-we-give-osuosl">Why Do We Give to the OSL?</a></li>
-        </ul>
-    </li>
-</ul>
-</li>
-<li id="mobile-osu-top-hat">
-    <ul class="menu">
-        <li class="first leaf"><a href="http://calendar.oregonstate.edu">Calendar</a></li>
-        <li class="leaf"><a href="http://osulibrary.oregonstate.edu">Library</a></li>
-        <li class="leaf"><a href="http://oregonstate.edu/campusmap">Maps</a></li>
-        <li class="leaf"><a href="http://oregonstate.edu/main/online-services">Online Services</a></li>
-        <li class="last leaf"><a href="https://securelb.imodules.com/s/359/campaign/index.aspx?sid=359&amp;gid=34&amp;pgid=1982&amp;cid=3007" class="campaign">Make a Gift</a></li>
-    </ul>
-</li>
 </ul>
 <!-- Main menu navbar -->
 <div id='main-menu' role='navigation'>
-  <div class="region region-nav">
-    <div id="block-nice-menus-1" class="block block-nice-menus">
-      <div class="content">
-        <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
-          <li class="menu-217 menu-path-front first odd"><a href='/' class="active">Home</a></li>
-          {% for page in pages | sort(attribute='order') %}
-            {% if page.top_menu == 'parent' %}
-              <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
-              <ul>
-              {% if page.duplicate_name %}
-                <li><a href='/{{ page.slug }}'>{{ page.duplicate_name }}</a></li>
-              {% endif %}
-            <!-- If page has a child, create a list then inspect each page to see
-                 if it is a child of this page, then write to html -->
-              {% for pchild in pages | sort(attribute='order') %}
-                {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
-                  <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
-                {% elif pchild.menu_parent == page.menu_child %}
-                  <li class="menuparent"><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a>
-                  <!-- If child has a child (gchild), create a list then inspect
-                       each page to see if it is a child of this page, then write
-                       to html -->
-                  {% if pchild.menu_gchild %}
-                    <ul>
-                    {% for pgchild in pages | sort(attribute='order') %}
-                      {% if pgchild.menu_parent == pchild.menu_gchild %}
-                        <li><a href='/{{ pgchild.slug }}'>{{ pgchild.title }}</a></li>
-                      {% endif %}
+    <div class="region region-nav">
+        <div id="block-nice-menus-1" class="block block-nice-menus">
+            <div class="content">
+                <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
+                    <li class="menu-217 menu-path-front first odd"><a href='/' class="active">Home</a></li>
+                    {% for page in pages | sort(attribute='order') %}
+                    {% if page.top_menu == 'parent' %}
+                    <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
+                        <ul>
+                            {% if page.duplicate_name %}
+                            <li><a href='/{{ page.slug }}'>{{ page.duplicate_name }}</a></li>
+                            {% endif %}
+                            <!-- If page has a child, create a list then inspect each page to see
+                                if it is a child of this page, then write to html -->
+                                {% for pchild in pages | sort(attribute='order') %}
+                                {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
+                                <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
+                                {% elif pchild.menu_parent == page.menu_child %}
+                                <li class="menuparent"><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a>
+                                    <!-- If child has a child (gchild), create a list then inspect
+                                        each page to see if it is a child of this page, then write
+                                        to html -->
+                                        {% if pchild.menu_gchild %}
+                                        <ul>
+                                            {% for pgchild in pages | sort(attribute='order') %}
+                                            {% if pgchild.menu_parent == pchild.menu_gchild %}
+                                            <li><a href='/{{ pgchild.slug }}'>{{ pgchild.title }}</a></li>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                </li>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                        </ul>
+                    </li>
+                    {% elif page.top_menu%}
+                    <li><a href='/{{ page.slug }}'>{{ page.title }}</a></li>
+                    {% endif %}
                     {% endfor %}
-                   </ul>
-                   </li>
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-              </ul>
-              </li>
-            {% elif page.top_menu%}
-              <li><a href='/{{ page.slug }}'>{{ page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
 
-        </ul>
-      </div>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <!-- /#main-menu -->
