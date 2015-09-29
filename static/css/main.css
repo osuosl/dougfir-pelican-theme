@@ -4486,4 +4486,8 @@ table {
 .fs-row {
   position: relative; }
 
+.align-center-white {
+  background-color: gray;
+}
+
 /*# sourceMappingURL=main.css.map */
