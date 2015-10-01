@@ -3,46 +3,36 @@
     <a class="parent" href='http://eecs.oregonstate.edu'>School of Electrical Engineering and Computer Science</a>
     <h1><a href='/'>{{ SITENAME }}</a></h1>
 </div>
+
+{% set ptest = pages | menu_filter %}
+
 <ul id="mobile-menu" role="navigation">
     <li id="mobile-main-menu">
         <ul class="menu">
             <li class="first leaf"><a href="/" class="active">Home</a></li>
-            {% for page in pages | sort(attribute='order') %}
-            {% if page.top_menu == 'parent' %}
-            <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
-                <ul>
-                    {% if page.duplicate_name %}
-                    <li><a href='/{{ page.slug }}'>{{ page.duplicate_name }}</a></li>
-                    {% endif %}
-                    <!-- If page has a child, create a list then inspect each page to see
-                        if it is a child of this page, then write to html -->
-                        {% for pchild in pages | sort(attribute='order') %}
-                        {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
-                        <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
-                        {% elif pchild.menu_parent == page.menu_child %}
-                        <li class="menuparent"><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a>
-                            <!-- If child has a child (gchild), create a list then inspect
-                                each page to see if it is a child of this page, then write
-                                to html -->
-                                {% if pchild.menu_gchild %}
-                                <ul>
-                                    {% for pgchild in pages | sort(attribute='order') %}
-                                    {% if pgchild.menu_parent == pchild.menu_gchild %}
-                                    <li><a href='/{{ pgchild.slug }}'>{{ pgchild.title }}</a></li>
-                                    {% endif %}
-                                    {% endfor %}
-                                </ul>
-                        </li>
-                        {% endif %}
-                        {% endif %}
-                        {% endfor %}
-                </ul>
+            {% for page in ptest %}
+            {% if page['children'] %}
+            <li class="menuparent"><a href={{ page['link'] }}>{{ page['name'] }}</a>
+              <ul>
+              {% for child in page['children'] %}
+              {% if child['children'] %}
+                <li class="menuparent"><a href={{ child['link'] }}>{{ child['name'] }}</a>
+                  <ul>
+                    {% for grandchild in child['children'] %}
+                    <li><a href={{ grandchild['link'] }}>{{ grandchild['name'] }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                <li><a href={{ child['link'] }}>{{ child['name'] }}</a></li>
+              {% endif %}
+              {% endfor %}
+              </ul>
             </li>
-            {% elif page.top_menu%}
-            <li><a href='/{{ page.slug }}'>{{ page.title }}</a></li>
+            {% else %}
+            <li><a href={{ page['link'] }}>{{ page['name'] }}</a></li>
             {% endif %}
             {% endfor %}
-
         </ul>
     </li>
     <li id="mobile-osu-top-hat">
@@ -62,42 +52,29 @@
             <div class="content">
                 <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
                     <li class="menu-217 menu-path-front first odd"><a href='/' class="active">Home</a></li>
-                    {% for page in pages | sort(attribute='order') %}
-                    {% if page.top_menu == 'parent' %}
-                    <li class="menuparent"><a href='/{{ page.slug }}'>{{ page.title }}</a>
-                        <ul>
-                            {% if page.duplicate_name %}
-                            <li><a href='/{{ page.slug }}'>{{ page.duplicate_name }}</a></li>
-                            {% endif %}
-                            <!-- If page has a child, create a list then inspect each page to see
-                                if it is a child of this page, then write to html -->
-                                {% for pchild in pages | sort(attribute='order') %}
-                                {% if pchild.menu_parent == page.menu_child and not pchild.menu_gchild %}
-                                <li><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a></li>
-                                {% elif pchild.menu_parent == page.menu_child %}
-                                <li class="menuparent"><a href='/{{ pchild.slug }}'>{{ pchild.title }}</a>
-                                    <!-- If child has a child (gchild), create a list then inspect
-                                        each page to see if it is a child of this page, then write
-                                        to html -->
-                                        {% if pchild.menu_gchild %}
-                                        <ul>
-                                            {% for pgchild in pages | sort(attribute='order') %}
-                                            {% if pgchild.menu_parent == pchild.menu_gchild %}
-                                            <li><a href='/{{ pgchild.slug }}'>{{ pgchild.title }}</a></li>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </ul>
-                                </li>
-                                {% endif %}
-                                {% endif %}
-                                {% endfor %}
-                        </ul>
+                    {% for page in ptest %}
+                    {% if page['children'] %}
+                    <li class="menuparent"><a href={{ page['link'] }}>{{ page['name'] }}</a>
+                      <ul>
+                      {% for child in page['children'] %}
+                      {% if child['children'] %}
+                        <li class="menuparent"><a href={{ child['link'] }}>{{ child['name'] }}</a>
+                          <ul>
+                            {% for grandchild in child['children'] %}
+                            <li><a href={{ grandchild['link'] }}>{{ grandchild['name'] }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                      {% else %}
+                        <li><a href={{ child['link'] }}>{{ child['name'] }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+                      </ul>
                     </li>
-                    {% elif page.top_menu%}
-                    <li><a href='/{{ page.slug }}'>{{ page.title }}</a></li>
+                    {% else %}
+                    <li><a href={{ page['link'] }}>{{ page['name'] }}</a></li>
                     {% endif %}
                     {% endfor %}
-
                 </ul>
             </div>
         </div>
