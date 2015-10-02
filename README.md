@@ -37,35 +37,18 @@ child4                                              child4 -- gchild1
 The main menu is generated using Jinja2 templating. This requires metadata in
 the static webpages:
 
-* `:order:`
+* `:menu: <parent_name>, <page_name>, <menu_weight>; <parent2>, <name2>, <weight2>; ...`
 
-  Required integer on all pages (including blog posts), the top menu items
-  (`thingN` above) must be in incremental order unseparated by submenu items
+  This metadata is required for pages to be included in the menu. Each menu
+  location is delimited by a semicolon (';'). Menu items can have one or
+  multiple locations in the menu.
 
-* `:title:`
+  - `<parent_name` is the name of the menu item above the current item
+  - `<page_name>` is the name of the current item that will be displayed in the
+     menu
+  - `<menu_weight>` is the weight of the menu item. Items with higher weights
+    appear lower on the menu.
 
-  Sets the label for the menu item, not required if page title exists (when
-  using RestructuredText)
+* `:slug: path/to/rendered/file`
 
-* `:top_menu:`
-
-  If set to `parent`, this item exists in the top portion of the menu
-
-* `:menu_child:`
-
-  If this field matches another page's `menu_parent` field, that page will be
-  placed under this page in the child position. This field is required whenever
-  a menu item will have a child **or** a grandchild.
-
-* `:menu_parent:`
-
-  See `menu_child`
-
-* `:duplicate_name:`
-
-  Allows a page to be listed in the top menu as well as directly below it in the
-  corresponding submenu. The label will be set to the `duplicate_name` value
-
-* `:menu_gchild:`
-
-  Same relationship to `menu_parent` as `menu_child`, but for a grandchild
+  This is used as the link in the ``<a href=''>`` tag.
