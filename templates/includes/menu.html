@@ -13,20 +13,10 @@
         <li class="first leaf"><a href="/" class="active">Home</a></li>
         {% for page in ptest %}
         {% if page['children'] %}
-        <li class="menuparent"><a href={{ page['link'] }}>{{ page['name'] }}</a>
+        <li class="expanded"><a href={{ page['link'] }}>{{ page['name'] }}</a>
           <ul>
             {% for child in page['children'] %}
-            {% if child['children'] %}
-            <li class="menuparent"><a href={{ child['link'] }}>{{ child['name'] }}</a>
-              <ul>
-                {% for grandchild in child['children'] %}
-                <li><a href={{ grandchild['link'] }}>{{ grandchild['name'] }}</a></li>
-                {% endfor %}
-              </ul>
-            </li>
-            {% else %}
-            <li><a href={{ child['link'] }}>{{ child['name'] }}</a></li>
-            {% endif %}
+            <li class="leaf"><a href={{ child['link'] }}>{{ child['name'] }}</a></li>
             {% endfor %}
           </ul>
         </li>
