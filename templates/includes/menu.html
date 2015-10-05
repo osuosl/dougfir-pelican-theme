@@ -5,13 +5,13 @@
   </div>
 
   <!-- Read the Pelican page list and create menu structure -->
-  {% set ptest = pages | menu_filter %}
+  {% set pelpages = pages | menu_filter %}
 
   <ul id="mobile-menu" role="navigation">
     <li id="mobile-main-menu">
       <ul class="menu">
         <li class="first leaf"><a href="/" class="active">Home</a></li>
-        {% for page in ptest %}
+        {% for page in pelpages %}
         {% if page['children'] %}
         <li class="expanded"><a href={{ page['link'] }}>{{ page['name'] }}</a>
           <ul>
@@ -43,7 +43,7 @@
         <div class="content">
           <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
             <li class="menu-217 menu-path-front first odd"><a href='/' class="active">Home</a></li>
-            {% for page in ptest %}
+            {% for page in pelpages %}
             {% if page['children'] %}
             <li class="menuparent"><a href={{ page['link'] }}>{{ page['name'] }}</a>
               <ul>
