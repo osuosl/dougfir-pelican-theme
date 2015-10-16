@@ -52,3 +52,14 @@ the static webpages:
 * `:slug: path/to/rendered/file`
 
   This is used as the link in the ``<a href=''>`` tag.
+
+#### Direct Templates
+
+Direct templates are their own animal. You cannot add metadata to a direct
+template, so if you want to include one in your menu you have to add the
+information directly to the site's `pelicanconf.py` like this:
+
+```
+DIRECT_TEMPLATE_INFO = [
+        {'parent': u'top', 'link': '/blog', 'name': 'Blog', 'weight': 5, 'children': []}]
+```
