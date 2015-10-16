@@ -5,7 +5,7 @@
 </div>
 
 <!-- Read the Pelican page list and create menu structure -->
-{% set pelpages = (pages | menu_filter) + DIRECT_TEMPLATE_INFO %}
+{% set pelpages = (pages | menu_filter(DIRECT_TEMPLATE_INFO)) %}
 
 <ul id="mobile-menu" role="navigation">
     <li id="mobile-main-menu">
