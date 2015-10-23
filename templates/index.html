@@ -21,6 +21,7 @@
                                 </h3>
                                 <p class="fs-caption">
                                 {% set summary = article.content | truncate(400) %}
+                                {% set summary = summary | close_html_tags %}
                                 {{ summary }}
                                 </p>
                             </div>
