@@ -2734,13 +2734,16 @@ a:hover, a:focus {
   min-height: 1px; }
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-  width: 976px; }
+  width: 976px;
+}
 
 .span10 {
   width: 810px; }
 
 .span9 {
-  width: 727px; }
+  /*width: 727px; */
+  width: 50vw;
+}
 
 .span3 {
   width: 229px; }
@@ -4481,10 +4484,14 @@ table {
   position: absolute;
   top: 30%;
   transform: translate(-10px, -30%);
-  width: 100%; }
+  width: 100%;
+  height: auto;
+}
 
 .fs-row {
-  position: relative; }
+  position: relative;
+  width: 100vw
+}
 
 .align-center-white {
   background-color: gray;
@@ -4498,4 +4505,26 @@ table {
   font-size: 1.5em;
   color: #C34500;
 }
+
+@media only screen and (max-width: 976px){
+
+    .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+      width: 90vw
+    }
+
+}
+
+@media only screen and (max-width: 810px) {
+    #sidebar-first {
+      display: none;
+    }
+    .span9 {
+      width: 90vw
+    }
+    #block-menu-menu-footer-menu {
+      width: 80vw
+    }
+}
+
+
 /*# sourceMappingURL=main.css.map */
