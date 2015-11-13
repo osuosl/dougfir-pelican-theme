@@ -4506,6 +4506,10 @@ table {
   color: #C34500;
 }
 
+.mobile-content {
+  display: none
+}
+
 @media only screen and (max-width: 976px){
 
     .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
@@ -4515,7 +4519,7 @@ table {
 }
 
 @media only screen and (max-width: 810px) {
-    #sidebar-first {
+    .region-sidebar-first {
       display: none;
     }
     .span9 {
@@ -4523,6 +4527,21 @@ table {
     }
     #block-menu-menu-footer-menu {
       width: 80vw
+    }
+    .view-feature-story {
+      display: none;
+    }
+    .mobile-content {
+      margin-top: 5em;
+      height: 50vh;
+      width: 80vw;
+      z-index: 1;
+      display: block;
+    }
+    .mobile-content h3 {
+      margin-bottom: 0;
+      z-index: 0;
+      display: block;
     }
 }
 
