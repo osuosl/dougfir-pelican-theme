@@ -4509,6 +4509,9 @@ table {
 .mobile-content {
   display: none
 }
+.mobile-title {
+  display: none
+}
 
 @media only screen and (max-width: 976px){
 
@@ -4518,7 +4521,7 @@ table {
 
 }
 
-@media only screen and (max-width: 810px) {
+@media only screen and (max-width: 976px) {
     .region-sidebar-first {
       display: none;
     }
@@ -4533,16 +4536,29 @@ table {
     }
     .mobile-content {
       margin-top: 5em;
-      height: 50vh;
+      margin-left: auto;
+      margin-right: auto;
+      height: 40vh;
       width: 80vw;
+      text-align: center;
       z-index: 1;
       display: block;
+      position: relative;
     }
-    .mobile-content h3 {
-      margin-bottom: 0;
+    .mobile-title{
+      margin: auto;
+      bottom: 1em;
       z-index: 0;
+      clear: both;
       display: block;
+      text-align: center;
     }
+    .summary-image {
+      display: block;
+      width: auto;
+    }
+    /*#mobile-menu  {
+      display: block; }*/
 }
 
 

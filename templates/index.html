@@ -44,14 +44,9 @@
                 </div>
                 <div class="mobile-content">
                   {% set first_article = articles[0] %}
-
-                  <div class='fs-row'>
-                    <h3><a href="{{ first_article.url }}">{{ first_article.title }}</a></h3>
-                    <a href="{{ first_article.url }}">
-                      <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ first_article.img }} "></img>
-                    </a>
-                  </div>
+                  <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ first_article.img }} "></img>
                 </div>
+                <div class="mobile-title"><h3><a href="{{ first_article.url }}">{{ first_article.title }}</a></h3></div>
             </div>
         </div>
     </div>
