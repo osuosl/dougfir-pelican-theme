@@ -4557,6 +4557,9 @@ table {
       display: block;
       width: auto;
     }
+    .span10 {
+      width: 100vw;
+    }
     /*#mobile-menu  {
       display: block; }*/
 }
