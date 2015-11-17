@@ -4513,15 +4513,11 @@ table {
   display: none
 }
 
-@media only screen and (max-width: 976px){
 
+@media only screen and (max-width: 976px) {
     .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
       width: 90vw
     }
-
-}
-
-@media only screen and (max-width: 976px) {
     .region-sidebar-first {
       display: none;
     }
@@ -4535,33 +4531,40 @@ table {
       display: none;
     }
     .mobile-content {
-      margin-top: 5em;
+      margin-top: 1em;
       margin-left: auto;
       margin-right: auto;
-      height: 40vh;
-      width: 80vw;
       text-align: center;
-      z-index: 1;
       display: block;
-      position: relative;
+      height: auto;
+      overflow: visible;
     }
     .mobile-title{
-      margin: auto;
-      bottom: 1em;
-      z-index: 0;
-      clear: both;
       display: block;
       text-align: center;
     }
     .summary-image {
       display: block;
       width: auto;
+      top: 4.5em;
     }
     .span10 {
       width: 100vw;
     }
-    /*#mobile-menu  {
-      display: block; }*/
+    #mobile-menu  {
+      display: block;
+    }
+    #block-views-feature-story-block{
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      overflow: visible;
+      display: block;
+    }
+    #features {
+      height: auto;
+      min-height: 300px;
+    }
 }
 
 
