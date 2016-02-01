@@ -109,7 +109,10 @@ div.content {
   font-size: 14px;
   line-height: 18px;
   padding: 20px 0 20px 20px;
+  background: #252525;
+  background: -webkit-linear-gradient(top, #39393a 0%, #252525 100%);
   background: -moz-linear-gradient(center top, #39393a 0%, #252525 100%) repeat scroll 0 0 transparent;
+  background: linear-gradient(to bottom,#39393a 0%,#252525 100%);
   min-height: 148px;
   border-top: 4px solid #dbd6d0; }
 
