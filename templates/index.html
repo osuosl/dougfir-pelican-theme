@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% set first_article = articles[0] %}
+  <div class="mobile-title"><h3><a href="{{ first_article.url }}">{{ first_article.title }}</a></h3></div>
 <div id="features">
     <div class='region region-features'>
+      <div class="mobile-content">
+        <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ first_article.img }} "></img>
+      </div>
+
         <div id="block-views-feature-story-block" class="block block-views">
             <div class="content">
                 <div class="view view-feature-story view-id-feature_story view-display-id-block">
@@ -11,7 +16,7 @@
                         {% for article in articles[:5] %}
                         <div class='fs-row'>
                             <a href="{{ article.url }}">
-                                <img class='summary-image' width="705" height="564" alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
+                                <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
                             </a>
                             <div class="views-field-field-caption">
                                 <h3 class="fs-title">
@@ -42,6 +47,9 @@
                         </a>
                     </div>
                 </div>
+                <!-- <div class="mobile-content">
+                  <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ first_article.img }} "></img>
+                </div> -->
             </div>
         </div>
     </div>
