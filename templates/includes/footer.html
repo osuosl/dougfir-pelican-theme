@@ -9,7 +9,7 @@
             {{ ROOM }} {{ BUILDING }}<br />
             {{ STREET_ADDRESS }}<br />
             {% for e in EMAIL %}
-              <span style="color: #C34500;"><a href="mailto:{{ e }}">{{ e }}</a></span><br />
+              <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
             {% endfor %}
             Phone: {{ PHONE_NUM }}
           </p>
