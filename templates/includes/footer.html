@@ -5,16 +5,17 @@
         <h3>Contact Info</h3>
         <div class="content">
           <p>
-            OSU Open Source Lab<br />
-            Kerr Admin B211<br />
-            Corvallis, OR 97331<br />
-            General Inquiries:<br /><span style="color: #C34500;"><a href="mailto:info@osuosl.org">info@osuosl.org</a></span><br />
-            Support for Project Infrastructure<br /><span style="color: #C34500;"><a href="mailto:support@osuosl.org">support@osuosl.org</a></span><br />
-            Questions about Donations:<br /><span style="color: #C34500;"><a href="mailto:donations@osuosl.org">donations@osuosl.org</a></span>
+            {{ SITENAME }}<br />
+            {{ ROOM }} {{ BUILDING }}<br />
+            {{ STREET_ADDRESS }}<br />
+            {% for e in EMAIL %}
+              <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
+            {% endfor %}
+            Phone: {{ PHONE_NUM }}
           </p>
         </div>
         <a href="http://oregonstate.edu/copyright">Copyright</a>
-        &copy;2015 Oregon State University<br />
+        &copy;2016 Oregon State University<br />
         <a href="http://oregonstate.edu/disclaimer">Disclaimer</a>
         </div
         <!-- Read the Pelican page list and create menu structure -->
