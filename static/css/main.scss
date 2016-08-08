@@ -4772,3 +4772,13 @@ table {
         min-height: 300px;
     } 
 }
+
+.nosidebar {
+    width: calc(100% - 20px) !important;
+}
+.nosidebar #content {
+    padding-right: 0 !important;
+}
+.nosidebar img {
+    padding-left: 0 !important;
+}
