@@ -2,9 +2,11 @@
     <div class="region region-sidebar-first">
         <div id="block-block-81" class="block block-block">
             <div class="content">
-                <p><a href="https://osuosl.org"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
             </div>
         </div>
+
+        {% if IS_OSL %}
         <div id="block-block-61" class="block block-block">
             <div class="content">
                 <ul class='menu'>
@@ -12,7 +14,9 @@
                     <li class='leaf'><a href="http://eecs.oregonstate.edu" class="side-link">Electrical Engineering and Computer Science</a></li>
                     <li class='leaf'><a href="/contact" class="side-link">Contact</a></li>
                 </ul>
+
                     <!--<p><a href="http://cass.oregonstate.edu/" target="_blank"><img alt="Open Source Lab logo" src="http://eecs.oregonstate.edu/sites/eecs.oregonstate.edu/files/images/cass.png" style="width:265px" /></a></p>-->
+
             </div>
         </div>
         <div id="block-block-1" class="block block-block">
@@ -29,7 +33,8 @@
         <div>
           <h2><a href="http://lists.osuosl.org/mailman/listinfo/osl-newsletter">Newsletter Sign Up</a></h2>
           <div class="content">
-            <div class="view view-newletter-sign-up-form view-id-newletter_sign_up_form view-display-id-block view-dom-id-91a45f51554ee829dc6a37772f7a9f8d">
+            <div class="view view-newletter-sign-up-form view-id-newletter_sign_up_form view-display-id-block view-dom-id-91a45f51554ee829dc6a37772f7a9f8d" >
+        {% endif %}
               <!-- <div class="view-content">
                 <div class="item-list">
                   <ul>
@@ -71,6 +76,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
