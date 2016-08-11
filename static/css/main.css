@@ -4563,7 +4563,6 @@ table {
   #features {
     height: auto;
     min-height: 300px; } }
-
 .nosidebar {
   width: calc(100% - 20px) !important; }
 
