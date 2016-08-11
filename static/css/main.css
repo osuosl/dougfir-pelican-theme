@@ -59,6 +59,10 @@ a.parent, .parent, a.parent:hover {
   margin-top: 9px;
   display: inline-block; }
 
+a.parent:hover, a.parent:focus, a.parent:active {
+  color: #615042;
+}
+
 h2 {
   font-size: 22px;
   line-height: 32px; }
@@ -83,6 +87,7 @@ h4 {
 .region-sidebar-first > div, .region-sidebar-second > div {
   border-bottom: medium none !important; }
 
+/* site title */
 h1 a:hover, h1 a:active, h1 a:focus {
   color: #385e86; }
 
@@ -2625,8 +2630,8 @@ a:focus {
   outline: thin dotted #333;
   outline-offset: -2px; }
 
-a:hover, a:active {
-  outline: 0 none; }
+/* a:hover, a:active {
+  outline: 0 none; } */
 
 sub, sup {
   font-size: 75%;
