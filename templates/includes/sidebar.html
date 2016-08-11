@@ -5,7 +5,17 @@
                 <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
             </div>
         </div>
-
+        {% if IS_CASS %}
+        <div id="block-block-81" class="block block-block">
+            <div class="content">
+                <p>
+		        {{ SITENAME }}<br />
+            		{{ ROOM }} {{ BUILDING }}<br />
+  	 	        {{ STREET_ADDRESS }}<br />	
+		</p>
+            </div>
+        </div>
+        {% endif %}
         {% if IS_OSL %}
         <div id="block-block-61" class="block block-block">
             <div class="content">
