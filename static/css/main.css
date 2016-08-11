@@ -60,8 +60,7 @@ a.parent, .parent, a.parent:hover {
   display: inline-block; }
 
 a.parent:hover, a.parent:focus, a.parent:active {
-  color: #615042;
-}
+  color: #615042; }
 
 h2 {
   font-size: 22px;
@@ -2630,9 +2629,6 @@ a:focus {
   outline: thin dotted #333;
   outline-offset: -2px; }
 
-/* a:hover, a:active {
-  outline: 0 none; } */
-
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -4504,8 +4500,7 @@ table {
 
 .title {
   font-size: 26px;
-  color: #C34500;
-}
+  color: #C34500; }
 
 .mobile-content {
   display: none; }
@@ -4573,11 +4568,9 @@ table {
   padding-left: 0 !important; }
 
 .m-icon-link:hover {
-    text-decoration: none !important;
-}
+  text-decoration: none !important; }
 
 .m-icon-link i {
-    display: inline !important;
-}
+  display: inline !important; }
 
 /*# sourceMappingURL=main.css.map */
