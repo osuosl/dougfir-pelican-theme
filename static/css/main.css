@@ -215,7 +215,7 @@ ul.quicktabs-tabs.quicktabs-style-basic li a:hover, ul.quicktabs-tabs.quicktabs-
   color: #fff; }
 
 input.form-submit {
-  background: -moz-linear-gradient(center top, #c34500 0%, #983600 100%) repeat scroll 0 0 transparent;
+  background: linear-gradient(to bottom, #c34500 0%, #983600 100%) repeat scroll 0 0 transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   color: #fff;
   border: medium none;
@@ -1554,7 +1554,7 @@ div.n td, #querystats td {
 #osu-top-hat {
   background: -moz-linear-gradient(center top, #565656 0%, #252525 100%) repeat scroll;
   background-color: #252525;
-  background-image: linear-gradient(center top, #565656, #252525) repeat scroll;
+  background: linear-gradient(to bottom, #565656, #252525) repeat scroll;
   border-bottom: 3px solid #dbd6d0;
   font-family: "Gudea",Arial,Helvetica,Verdana,sans-serif;
   font-size: 13px;
@@ -4584,6 +4584,14 @@ table {
 
 .nosidebar img {
     padding-left: 0 !important;
+}
+
+.m-icon-link:hover {
+    text-decoration: none !important;
+}
+
+.m-icon-link i {
+    display: inline !important;
 }
 
 /*# sourceMappingURL=main.css.map */
