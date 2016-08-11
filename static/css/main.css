@@ -4580,4 +4580,12 @@ table {
     padding-left: 0 !important;
 }
 
+.m-icon-link:hover {
+    text-decoration: none !important;
+}
+
+.m-icon-link i {
+    display: inline !important;
+}
+
 /*# sourceMappingURL=main.css.map */
