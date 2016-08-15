@@ -493,8 +493,9 @@ img {
   max-width: 100%;
   max-height: 470px;
   vertical-align: middle;
-  padding-left: 10px;
+  padding-left: 0px;
   padding-right: 10px;
+  padding-top: 0px;
   padding-bottom: 10px; }
 
 @media (max-width: 480px) {
@@ -1392,7 +1393,8 @@ td.checkbox, th.checkbox {
   overflow: hidden;
   position: absolute;
   left: 0px;
-  bottom: 100px;
+  top: 270px;  /* So the caption bar doesn't float */
+  bottom: 10px;
   z-index: 100;
   width: 100%;
   transition: 1s ease; }
@@ -4490,7 +4492,7 @@ table {
 .summary-image {
   position: absolute;
   top: 30%;
-  transform: translate(-10px, -30%);
+  transform: translate(0px, -30%); /* Change settings to align summ image */
   width: 100%;
   height: auto;
 }
