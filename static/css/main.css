@@ -495,7 +495,6 @@ img {
   vertical-align: middle;
   padding-left: 0px;
   padding-right: 10px;
-  padding-top: 0px;
   padding-bottom: 10px; }
 
 @media (max-width: 480px) {
@@ -1393,7 +1392,7 @@ td.checkbox, th.checkbox {
   overflow: hidden;
   position: absolute;
   left: 0px;
-  top: 270px;  /* So the caption bar doesn't float */
+  top: 317px;  /* So the caption bar doesn't float */
   bottom: 10px;
   z-index: 100;
   width: 100%;
