@@ -1,9 +1,11 @@
 <div id='sidebar-first' class='span3'>
     <div class="region region-sidebar-first">
         <div id="block-block-81" class="block block-block">
+            {% if IS_CASS %}
             <div class="content">
                 <h2 style="color: #c34500; font-size:25px; line-height:22px">Find Us Here</h2>
             </div>
+            {% endif %}
             <div class="content">
                 <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
             </div>
