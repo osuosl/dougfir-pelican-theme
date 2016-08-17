@@ -41,7 +41,6 @@
                     <a id='next' class="side-controls next slick-next">
                         <span class='icon-chevron-left'>&#8250;</span>
                     </a>
-                    <br>
                     <div class='more-link'>
                         <a href={{ STORIES }}>
                             All stories
@@ -57,7 +56,8 @@
 </div>
 
 {% if CASS_HOME_EXTRAS %}
-    <br>
+    <!-- Temp soln: {include} functionality is an open PR on getpelican 
+                   Fixwhen it gets merged/Pelican 3.6.4 is released -->
     <p>The Center for Applied Systems and Software (CASS) is a non-profit organization
     that provides software development, testing and hosting solutions to clients
     while giving students hands-on industry experience. Students are given the
