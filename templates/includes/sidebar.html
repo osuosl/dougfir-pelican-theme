@@ -22,7 +22,12 @@
 		                    {{ SITENAME }}<br />
                         {{ BUILDING }}<br />
   	 	                  {{ STREET_ADDRESS }}<br />
-                        {{ CITY_ZIP }}	
+                        {{ CITY_ZIP }}<br>
+
+                        {% for e in EMAIL %}
+                            {{ e.address }}<br>
+                        {% endfor %}
+                        {{ PHONE_NUM }}
 		                </p>
                     <li class='leaf'><a href='{{ DONATE_LINK }}'><i class='fa fa-gift' aria-hidden='true'></i> Make a Gift</a></li>
                 </ul>
