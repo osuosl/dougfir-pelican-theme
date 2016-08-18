@@ -4,9 +4,13 @@
 <div id='content'>
   <div class="region region-content">
     <div id="block-system-main" class="block block-system">
-
       <div class="content">
+        {% if IS_CASS %}
         <h1 style='font-size:35px; padding-top:5px; color: #c34500'>{{ NAME_ABBREV }} {{NEWS_OR_BLOG }}</h1>
+        {% endif %}
+        {% if IS_OSL %}
+        <h1 class="title">{{ DEP_NAME }} {{NEWS_OR_BLOG }}</h1>
+        {% endif %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
         <h2 class='title page-title'><a href='/{{ article.url }}'>{{ article.title }}</a></h2>
         <div class="field field-name-field-subtitle field-type-text field-label-hidden">
