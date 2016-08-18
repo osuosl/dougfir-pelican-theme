@@ -2,15 +2,14 @@
     <div class="region region-sidebar-first">
         <div id="block-block-81" class="block block-block">
             {% if IS_CASS %}
-            <div class="content">
-                <p><img src="{{ SITEURL }}/images/{{ CASSLOGO }}" style="padding:-5px" /></p>
-                <!-- <h2 style="color: #c34500; font-size:25px; line-height:22px">Find Us Here</h2> -->
-            </div>
+                <div class="content">
+                    <p><img src="{{ SITEURL }}/images/{{ CASSLOGO }}" style="padding:-5px" /></p>
+                </div>
             {% endif %}
             {% if IS_OSL%}
-            <div class="content">
-                <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
-            </div>
+                <div class="content">
+                    <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                </div>
             {% endif %}
         </div>
         {% if IS_CASS %}
