@@ -2,16 +2,20 @@
   <div class='container'>
     <div class='row'>
       <div class='span2 contact'>
-        <h3>Contact Info</h3>
+        {% if IS_OSL %}
+          <h3>Contact Info</h3>
+        {% endif %}
         <div class="content">
           <p>
-            {{ SITENAME }}<br />
-            {{ ROOM }} {{ BUILDING }}<br />
-            {{ STREET_ADDRESS }}<br />
-            {% for e in EMAIL %}
-              <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
-            {% endfor %}
-            Phone: {{ PHONE_NUM }}
+            {% if IS_OSL %}
+              {{ SITENAME }}<br />
+              {{ ROOM }} {{ BUILDING }}<br />
+              {{ STREET_ADDRESS }}<br />
+              {% for e in EMAIL %}
+                <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
+              {% endfor %}
+              Phone: {{ PHONE_NUM }}
+            {% endif %}
           </p>
         </div>
         <a href="http://oregonstate.edu/copyright">Copyright</a>
