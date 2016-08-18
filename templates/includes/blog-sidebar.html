@@ -2,7 +2,15 @@
     <div class="region region-sidebar-first">
         <div id="block-block-81" class="block block-block">
             <div class="content">
-                <p><a href="https://osuosl.org"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                {% if IS_OSL %}
+                    <p><a href="https://osuosl.org"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                {% endif %}
+                {% if IS_CASS %}
+                    <div class="content">
+                        <h2 style="color: #c34500; font-size:25px; line-height:22px">Find Us Here</h2>
+                    </div>
+                    <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                {% endif %}
             </div>
         </div>
         <div id="block-views-categories-block" class="block block-views">
@@ -13,6 +21,7 @@
                 <li class="views-row side-blog-list"><a href='/{{ article.url }}'>{{ article.title }}</a></li>
               {% endfor %}
             </ul>
+            {% if IS_OSL %}
             <ul class='menu'>
                 <li class='leaf'><a href="http://cass.oregonstate.edu" class="side-link">Center for Applied Systems and Software</a></li>
                 <li class='leaf'><a href="http://eecs.oregonstate.edu" class="side-link">Electrical Engineering and Computer Science</a></li>
@@ -34,6 +43,7 @@
         </div>
         <div>
           <h2><a href="http://lists.osuosl.org/mailman/listinfo/osl-newsletter">Newsletter Sign Up</a></h2>
+          {% endif %}
           <!-- <div class="content">
             <div class="view view-newletter-sign-up-form view-id-newletter_sign_up_form view-display-id-block view-dom-id-91a45f51554ee829dc6a37772f7a9f8d">
               <div class="view-content">
