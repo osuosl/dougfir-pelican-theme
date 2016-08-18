@@ -6,10 +6,22 @@
                     <p><a href="https://osuosl.org"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
                 {% endif %}
                 {% if IS_CASS %}
-                    <div class="content">
-                        <h2 style="color: #c34500; font-size:25px; line-height:22px">Find Us Here</h2>
-                    </div>
-                    <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                    <p><img src="{{ SITEURL }}/images/{{ CASSLOGO }}" style="padding:-5px" /></p>
+                    <ul class='menu'>
+                        <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                        <p>
+                            {{ SITENAME }}<br />
+                            {{ BUILDING }}<br />
+                            {{ STREET_ADDRESS }}<br />
+                            {{ CITY_ZIP }}<br>
+    
+                            {% for e in EMAIL %}
+                                <a href="mailto:{{ e.address }}">{{ e.address }}</a><br>
+                            {% endfor %}
+                            Phone: {{ PHONE_NUM }}
+                        </p>
+                        <li class='leaf'><a href='{{ DONATE_LINK }}'><i class='fa fa-gift' aria-hidden='true'></i> Make a Gift</a></li>
+                    </ul>
                 {% endif %}
             </div>
         </div>
