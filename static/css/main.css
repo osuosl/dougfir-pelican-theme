@@ -32,7 +32,7 @@ body {
   margin: 0; }
 
 #sidebar-first, #sidebar-second, #sidebar-first p, #sidebar-second p {
-  font-size: 14px;
+  font-size: 13.49px;
   line-height: 18px; }
 
 h1, h2 {
@@ -492,7 +492,7 @@ img {
   max-width: 100%;
   max-height: 470px;
   vertical-align: middle;
-  padding-left: 10px;
+  padding-left: 0px;
   padding-right: 10px;
   padding-bottom: 10px; }
 
@@ -1391,7 +1391,8 @@ td.checkbox, th.checkbox {
   overflow: hidden;
   position: absolute;
   left: 0px;
-  bottom: 100px;
+  top: 317px;  /* So the caption bar doesn't float */
+  bottom: 10px;
   z-index: 100;
   width: 100%;
   transition: 1s ease; }
@@ -1420,6 +1421,8 @@ html.js .view-feature-story a.views-throbbing, html.js .view-feature-story span.
   box-shadow: 0 1px 2px #ccc;
   padding: 0 0.2em 0.2em 0;
   position: absolute;
+  top: 318px;
+  bottom: 24px;
   right: 25px;
   text-align: center;
   width: 75px;
@@ -4484,7 +4487,7 @@ table {
 .summary-image {
   position: absolute;
   top: 30%;
-  transform: translate(-10px, -30%);
+  transform: translate(0px, -30%); /* Change settings to align summ image */
   width: 100%;
   height: auto; }
 

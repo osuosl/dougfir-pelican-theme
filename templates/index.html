@@ -56,25 +56,8 @@
 </div>
 
 {% if CASS_HOME_EXTRAS %}
-    <br>
-    <p>The Center for Applied Systems and Software (CASS) is a non-profit organization
-    that provides software development, testing and hosting solutions to clients
-    while giving students hands-on industry experience. Students are given the
-    opportunity and guidance to work with real-world clients and to see projects
-    from start to finish. CASS prides itself in offering quality services to
-    customers while providing a beneficial experience for our students.</p>
-    <p>CASS has three units, each with a specialized focus, that work closely together
-    to provide expanded services for clients and a more diverse experience for
-    students.</p>
-    
-    <ul class="simple">
-    <li><a class="reference external" href="cass.oregonstate.edu/units/osuosl/">Open Source Lab</a>: Open source hosting and software development</li>
-    <li><a class="reference external" href="cass.oregonstate.edu/units/software-dev-group/">Software Development Group</a>: Designs and develops applications for all major
-    platforms</li>
-    <li><a class="reference external" href="cass.oregonstate.edu/units/test-and-iot-lab/">Test and IoT Lab</a>: Hardware and software testing services and Internet of
-    Things (IoT) testing</li>
-    </ul>
-    <br>
+    {% set home_extras = pages[6] %}  <!-- Set to 6 to grab homepage extras --> 
+    {{ home_extras.content }}
 {% endif %}
 
 {% endblock %}

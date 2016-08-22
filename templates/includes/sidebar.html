@@ -1,18 +1,35 @@
 <div id='sidebar-first' class='span3'>
     <div class="region region-sidebar-first">
         <div id="block-block-81" class="block block-block">
-            <div class="content">
-                <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
-            </div>
+            {% if IS_CASS %}
+                <div class="content">
+                    <p><img src="{{ SITEURL }}/images/{{ CASSLOGO }}" style="padding:-5px" /></p>
+                </div>
+            {% endif %}
+            {% if IS_OSL%}
+                <div class="content">
+                    <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                </div>
+            {% endif %}
         </div>
         {% if IS_CASS %}
         <div id="block-block-81" class="block block-block">
             <div class="content">
-                <p>
-		        {{ SITENAME }}<br />
-            		{{ ROOM }} {{ BUILDING }}<br />
-  	 	        {{ STREET_ADDRESS }}<br />	
-		</p>
+                <ul class='menu'>
+                    <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                    <p>
+		                    {{ SITENAME }}<br />
+                        {{ BUILDING }}<br />
+  	 	                  {{ STREET_ADDRESS }}<br />
+                        {{ CITY_ZIP }}<br>
+
+                        {% for e in EMAIL %}
+                            <a href="mailto:{{ e.address }}">{{ e.address }}</a><br>
+                        {% endfor %}
+                        Phone: {{ PHONE_NUM }}
+		                </p>
+                    <li class='leaf'><a href='{{ DONATE_LINK }}'><i class='fa fa-gift' aria-hidden='true'></i> Make a Gift</a></li>
+                </ul>
             </div>
         </div>
         {% endif %}
