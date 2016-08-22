@@ -44,17 +44,23 @@ h1 {
   padding: 1em 0 0; }
 
 h1 a {
+  color: #385e86;
   text-decoration: none; }
 
 .parent + h1 {
   padding-top: 0; }
 
-a.parent, .parent {
+/* 'College of Engineering' menu link */
+a.parent, .parent, a.parent:hover {
+  color: #555;
   text-decoration: none;
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 9px;
   display: inline-block; }
+
+a.parent:hover, a.parent:focus, a.parent:active {
+  color: #615042; }
 
 h2 {
   font-size: 22px;
@@ -80,8 +86,9 @@ h4 {
 .region-sidebar-first > div, .region-sidebar-second > div {
   border-bottom: medium none !important; }
 
-a:hover, a:active, a:focus {
-  color: #615042; }
+/* site title */
+h1 a:hover, h1 a:active, h1 a:focus {
+  color: #385e86; }
 
 ul li {
   list-style-image: url(/theme/img/bullet.png);
@@ -207,7 +214,7 @@ ul.quicktabs-tabs.quicktabs-style-basic li a:hover, ul.quicktabs-tabs.quicktabs-
   color: #fff; }
 
 input.form-submit {
-  background: -moz-linear-gradient(center top, #c34500 0%, #983600 100%) repeat scroll 0 0 transparent;
+  background: linear-gradient(to bottom, #c34500 0%, #983600 100%) repeat scroll 0 0 transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   color: #fff;
   border: medium none;
@@ -1546,7 +1553,7 @@ div.n td, #querystats td {
 #osu-top-hat {
   background: -moz-linear-gradient(center top, #565656 0%, #252525 100%) repeat scroll;
   background-color: #252525;
-  background-image: linear-gradient(center top, #565656, #252525) repeat scroll;
+  background: linear-gradient(to bottom, #565656, #252525) repeat scroll;
   border-bottom: 3px solid #dbd6d0;
   font-family: "Gudea",Arial,Helvetica,Verdana,sans-serif;
   font-size: 13px;
@@ -2622,9 +2629,6 @@ a:focus {
   outline: thin dotted #333;
   outline-offset: -2px; }
 
-a:hover, a:active {
-  outline: 0 none; }
-
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -2823,9 +2827,7 @@ a.text-success:hover, a.text-success:focus {
   color: #356635; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: inherit;
-  font-family: inherit;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 22px;
   margin: 11px 0;
   text-rendering: optimizelegibility; }
@@ -2835,7 +2837,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-weight: normal;
   line-height: 1; }
 
-h1, h2, h3 {
+h2, h3 {
   line-height: 44px; }
 
 h5 {
@@ -4497,7 +4499,7 @@ table {
   float: right; }
 
 .title {
-  font-size: 1.5em;
+  font-size: 26px;
   color: #C34500; }
 
 .mobile-content {
@@ -4564,5 +4566,11 @@ table {
 
 .nosidebar img {
   padding-left: 0 !important; }
+
+.m-icon-link:hover {
+  text-decoration: none !important; }
+
+.m-icon-link i {
+  display: inline !important; }
 
 /*# sourceMappingURL=main.css.map */
