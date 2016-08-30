@@ -11,26 +11,28 @@
         {% if IS_OSL %}
           <h1 class="title">{{ DEP_NAME }} {{NEWS_OR_BLOG }}</h1>
         {% endif %}
+        <br>
         {% for article in (articles_page.object_list if articles_page else articles) %}
-        <h2 class='title page-title'><a href='/{{ article.url }}'>{{ article.title }}</a></h2>
-        <div class="field field-name-field-subtitle field-type-text field-label-hidden">
-          <div class="field-items">
-            <div class="field-item even">
-              by {{ article.author }} on {{ article.date }}
-        </div></div></div>
-        {% if article.img %}
-        <div class="field field-name-field-featured-image field-type-image field-label-hidden">
-          <div class="field-items">
-            <div class="field-item even">
-              <a href="/{{ article.url }}" class="active">
-                <img src="/images/{{ article.img }}" width="400" height="494" alt="" />
-              </a>
-            </div>
-          </div>
-        </div>
-        {% endif %}
-        {{ article.summary }}
-        <p><a href="/{{ article.url }}">Read more</a></p>
+            <h2><a href='/{{ article.url }}'>{{ article.title }}</a></h2>
+            <div class="field field-name-field-subtitle field-type-text field-label-hidden">
+              <div class="field-items">
+                <div class="field-item even">
+                  by {{ article.author }} <!-- on {{ article.date }} -->
+            </div></div></div>
+            <!-- Only display image if DISPLAY_IMAGE = True in pelicanconf -->
+            {% if article.img and DISPLAY_IMAGE %}
+                <div class="field field-name-field-featured-image field-type-image field-label-hidden">
+                  <div class="field-items">
+                    <div class="field-item even">
+                      <a href="/{{ article.url }}" class="active">
+                        <img src="/images/{{ article.img }}" width="400" height="494" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+            {% endif %}
+            {{ article.summary }}
+            <!-- <p><a href="/{{ article.url }}">Read more</a></p> -->
         {% endfor %}
 
         <ul class="pager">
