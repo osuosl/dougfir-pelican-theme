@@ -14,7 +14,7 @@
                 <div class="view view-feature-story view-id-feature_story view-display-id-block">
                     <div class='view-content front-page-story'>
                         {% for article in articles %}
-                            {% if article.category == FEATURED %}
+                            {% if article.tag == FEATURED %}
                                 <div class='fs-row'>
                                     <a href="{{ article.url }}">
                                         <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
