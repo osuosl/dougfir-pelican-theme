@@ -13,26 +13,27 @@
             <div class="content">
                 <div class="view view-feature-story view-id-feature_story view-display-id-block">
                     <div class='view-content front-page-story'>
-                        {% for article in articles[:5] %}
-                        <div class='fs-row'>
-                            <a href="{{ article.url }}">
-                                <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
-                            </a>
-                            <div class="views-field-field-caption">
-                                <h3 class="fs-title">
+                        {% for article in articles %}
+                            {% if article.category == FEATURED %}
+                                <div class='fs-row'>
                                     <a href="{{ article.url }}">
-                                        {{ article.title }}
+                                        <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
                                     </a>
-                                </h3>
-                                <p class="fs-caption">
-                                {% set summary = article.content | truncate(400) %}
-                                {% set summary = summary | close_html_tags %}
-                                {{ summary }}
-                                </p>
-                            </div>
-                        </div>
+                                    <div class="views-field-field-caption">
+                                        <h3 class="fs-title">
+                                            <a href="{{ article.url }}">
+                                                {{ article.title }}
+                                            </a>
+                                        </h3>
+                                        <p class="fs-caption">
+                                        {% set summary = article.content | truncate(400) %}
+                                        {% set summary = summary | close_html_tags %}
+                                        {{ summary }}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endif %}
                         {% endfor %}
-
                     </div>
 
                     <a id='prev' class="side-controls previous slick-prev">
