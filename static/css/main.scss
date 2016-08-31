@@ -47,10 +47,6 @@ h1 {
 
 	a {
 		text-decoration: none;
-
-		&.title-blue {
-			color: #385e86;
-		}
 	}
 }
 .parent + h1 {
@@ -63,9 +59,15 @@ a.parent, .parent, a.parent:hover {
 	font-size: 16px;
 	margin-top: 9px;
 	display: inline-block;
+}
+.title-blue {
+	color: #385e86;
 
-	&.title-blue {
-		color: #555;
+	// Topmost title
+	@at-root {
+		a.parent#{&}, .parent#{&}, a.parent:hover#{&} {
+			color: #555;
+		}
 	}
 }
 a.parent:hover, a.parent:focus, a.parent:active {
@@ -94,13 +96,6 @@ h4 {
 }
 .region-sidebar-first > div,.region-sidebar-second > div {
 	border-bottom: medium none !important;
-}
-
-/* site title */
-h1 a:hover,h1 a:active,h1 a:focus {
-	&.title-blue {
-		color: #385e86;
-	}
 }
 ul li {
 	list-style-image: url(/theme/img/bullet.png);
