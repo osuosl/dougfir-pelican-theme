@@ -44,22 +44,29 @@ h1 {
 	font-size: 30px;
 	margin: 0;
 	padding: 1em 0 0;
-}
-h1 a {
-    	color: #385e86;
-	text-decoration: none;
+
+	a {
+		text-decoration: none;
+
+		&.title-blue {
+			color: #385e86;
+		}
+	}
 }
 .parent + h1 {
 	padding-top: 0;
 }
 /* 'College of Engineering' menu link */
 a.parent, .parent, a.parent:hover {
-	color: #555;
 	text-decoration: none;
 	font-style: italic;
 	font-size: 16px;
 	margin-top: 9px;
 	display: inline-block;
+
+	&.title-blue {
+		color: #555;
+	}
 }
 a.parent:hover, a.parent:focus, a.parent:active {
 	color: #615042;
@@ -91,7 +98,9 @@ h4 {
 
 /* site title */
 h1 a:hover,h1 a:active,h1 a:focus {
-	color: #385e86;
+	&.title-blue {
+		color: #385e86;
+	}
 }
 ul li {
 	list-style-image: url(/theme/img/bullet.png);
@@ -4776,7 +4785,7 @@ table {
     #features {
         height: auto;
         min-height: 300px;
-    } 
+    }
 }
 
 .nosidebar {
