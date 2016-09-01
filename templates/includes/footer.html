@@ -9,12 +9,13 @@
           <p>
             {% if IS_OSL %}
               {{ SITENAME }}<br />
-              {{ ROOM }} {{ BUILDING }}<br />
+              {{ BUILDING }}<br />
               {{ STREET_ADDRESS }}<br />
               {% for e in EMAIL %}
-                <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
+              <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
               {% endfor %}
               Phone: {{ PHONE_NUM }}
+              <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" /></a></p>
             {% endif %}
           </p>
         </div>
