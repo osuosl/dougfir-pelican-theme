@@ -58,6 +58,8 @@ a.parent, .parent, a.parent:hover {
 
 .title-blue {
   color: #385e86; }
+  .title-blue:hover, .title-blue:focus {
+    color: #385e86; }
   a.parent.title-blue, .parent.title-blue, a.parent:hover.title-blue {
     color: #555; }
 

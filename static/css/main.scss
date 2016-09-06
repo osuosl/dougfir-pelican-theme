@@ -61,7 +61,12 @@ a.parent, .parent, a.parent:hover {
 	display: inline-block;
 }
 .title-blue {
-	color: #385e86;
+	$title-color: #385e86;
+	color: $title-color;
+
+	&:hover, &:focus {
+		color: $title-color;
+	}
 
 	// Topmost title
 	@at-root {
