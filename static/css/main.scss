@@ -138,8 +138,7 @@ div.content {
 #footer h2,#footer h3 {
 	color: #fff;
 	font-size: 120%;
-	margin-top: 0;
-	line-height: auto;
+	line-height: normal;
 }
 #footer a {
 	color: #fff;
@@ -148,6 +147,9 @@ div.content {
 	background-color: #666;
 	text-decoration: none;
 	border-radius: 3px;
+}
+#footer a img {
+    display:block;
 }
 #footer .block-menu {
 	float: left;
@@ -3021,7 +3023,6 @@ a.text-success:hover,a.text-success:focus {
 	color: #356635;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-weight: normal;
 	line-height: 22px;
 	margin: 11px 0;
 	text-rendering: optimizelegibility;

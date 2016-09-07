@@ -135,8 +135,7 @@ div.content {
 #footer h2, #footer h3 {
   color: #fff;
   font-size: 120%;
-  margin-top: 0;
-  line-height: auto; }
+  line-height: normal; }
 
 #footer a {
   color: #fff; }
@@ -145,6 +144,9 @@ div.content {
   background-color: #666;
   text-decoration: none;
   border-radius: 3px; }
+
+#footer a img {
+  display: block; }
 
 #footer .block-menu {
   float: left; }
@@ -1391,7 +1393,8 @@ td.checkbox, th.checkbox {
   overflow: hidden;
   position: absolute;
   left: 0px;
-  top: 317px;  /* So the caption bar doesn't float */
+  top: 317px;
+  /* So the caption bar doesn't float */
   bottom: 10px;
   z-index: 100;
   width: 100%;
@@ -2830,7 +2833,6 @@ a.text-success:hover, a.text-success:focus {
   color: #356635; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
   line-height: 22px;
   margin: 11px 0;
   text-rendering: optimizelegibility; }
@@ -4487,7 +4489,8 @@ table {
 .summary-image {
   position: absolute;
   top: 30%;
-  transform: translate(0px, -30%); /* Change settings to align summ image */
+  transform: translate(0px, -30%);
+  /* Change settings to align summ image */
   width: 100%;
   height: auto; }
 
