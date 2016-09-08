@@ -75,9 +75,6 @@ a.parent, .parent, a.parent:hover {
 		}
 	}
 }
-a.parent:hover, a.parent:focus, a.parent:active {
-	color: #615042;
-}
 h2 {
 	font-size: 22px;
 	line-height: 32px;
@@ -2927,6 +2924,9 @@ a {
 a:hover,a:focus {
 	color: #762a00;
 	text-decoration: underline;
+}
+h1 a:hover, h1 a:focus {
+    color: #c34500;
 }
 .row {
 	margin-left: -20px;
