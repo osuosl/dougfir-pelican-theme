@@ -54,6 +54,7 @@ h1 {
 }
 /* 'College of Engineering' menu link */
 a.parent, .parent, a.parent:hover {
+    color: #555;
 	text-decoration: none;
 	font-style: italic;
 	font-size: 16px;
@@ -74,6 +75,9 @@ a.parent, .parent, a.parent:hover {
 			color: #555;
 		}
 	}
+}
+a.parent:hover, a.parent:focus, a.parent:active {
+    color: #615042;
 }
 h2 {
 	font-size: 22px;
@@ -2923,7 +2927,6 @@ a {
 }
 a:hover,a:focus {
 	color: #762a00;
-	text-decoration: underline;
 }
 h1 a:hover, h1 a:focus {
     color: #c34500;
