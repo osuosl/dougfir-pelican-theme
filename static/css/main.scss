@@ -2927,9 +2927,11 @@ a {
 }
 a:hover,a:focus {
 	color: #762a00;
+/*	text-decoration: underline; */
 }
 h1 a:hover, h1 a:focus {
     color: #c34500;
+    text-decoration: underline;
 }
 .row {
 	margin-left: -20px;
