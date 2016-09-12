@@ -50,6 +50,7 @@ h1 {
 
 /* 'College of Engineering' menu link */
 a.parent, .parent, a.parent:hover {
+  color: #555;
   text-decoration: none;
   font-style: italic;
   font-size: 16px;
@@ -2726,7 +2727,10 @@ a {
   text-decoration: underline; }
 
 a:hover, a:focus {
-  color: #762a00;
+  color: #762a00; }
+
+h1 a:hover, h1 a:focus {
+  color: #c34500;
   text-decoration: underline; }
 
 .row {
@@ -4578,3 +4582,5 @@ table {
 
 .m-icon-link i {
   display: inline !important; }
+
+/*# sourceMappingURL=main.css.map */
