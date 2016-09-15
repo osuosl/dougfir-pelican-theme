@@ -29,10 +29,20 @@
                         Phone: {{ PHONE_NUM }}
 		                </p>
                     <li class='leaf'><a href='{{ DONATE_LINK }}'><i class='fa fa-gift' aria-hidden='true'></i> Make a Gift</a></li>
+                    <li class='leaf'></li>
+                    <br>
                     {% if ANNOUNCEMENT %}
-                        <p><img src='{{ SITEURL }}/images/{{ SA_IMAGE }}' style="padding:-5px" /></p>
-                        <p><a href='{{ SA_LINK }}' style="font-size:20px; text-decoration:none">{{ SA_TITLE }}</a></p>
-                        <p>{{ SA_DESCRIPTION }}</p>
+                        {% for article in articles %}
+                            {% if article.tag == SA %}
+                                {% if article.img != '' %}
+                                    <p><img src="{{ SITEURL }}/images/{{ article.img }}" style="padding:-5px"></img>
+                                    <a href="{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
+                                {% else %}
+                                    <p><a href="{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
+                                {% endif %}
+                                <p>{{ article.summary }}</p><br>
+                            {% endif %}
+                        {% endfor %}
                     {% endif %}
                 </ul>
             </div>
