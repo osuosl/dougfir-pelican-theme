@@ -32,16 +32,12 @@
                     <li class='leaf'></li>
                     <br>
                     {% if ANNOUNCEMENT %}
-                        {% for article in articles %}
-                            {% if article.tag == SA %}
+                        {% for article in articles if SA in article.tag %}
                                 {% if article.img != '' %}
                                     <p><img src="{{ SITEURL }}/images/{{ article.img }}" style="padding:-5px"></img>
-                                    <a href="{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
-                                {% else %}
-                                    <p><a href="{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
                                 {% endif %}
+                                <p><a href="{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
                                 <p>{{ article.summary }}</p><br>
-                            {% endif %}
                         {% endfor %}
                     {% endif %}
                 </ul>
