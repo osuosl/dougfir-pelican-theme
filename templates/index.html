@@ -13,8 +13,8 @@
             <div class="content">
                 <div class="view view-feature-story view-id-feature_story view-display-id-block">
                     <div class='view-content front-page-story'>
-                        {% for article in articles %}
-                            {% if article.tag == FEATURED %}
+                        {% for article in articles if FEATURED in article.tag %}
+                            {% if loop.index <= SLIDESHOW_LIMIT %}
                                 <div class='fs-row'>
                                     <a href="{{ article.url }}">
                                         <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
