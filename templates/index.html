@@ -6,15 +6,15 @@
 <div id="features">
     <div class='region region-features'>
       <div class="mobile-content">
-        <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ first_article.img }} "></img>
+        <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ MOBILE_DEFAULT_PIC }} "></img>
       </div>
 
         <div id="block-views-feature-story-block" class="block block-views">
             <div class="content">
                 <div class="view view-feature-story view-id-feature_story view-display-id-block">
                     <div class='view-content front-page-story'>
-                        {% for article in articles %}
-                            {% if article.tag == FEATURED %}
+                        {% for article in articles if FEATURED in article.tag %}
+                            {% if loop.index <= SLIDESHOW_LIMIT %}
                                 <div class='fs-row'>
                                     <a href="{{ article.url }}">
                                         <img class='summary-image' alt="" src="{{ SITEURL }}/images/{{ article.img }} "></img>
