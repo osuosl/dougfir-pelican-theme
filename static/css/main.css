@@ -238,7 +238,7 @@ input[type="image"] {
 
 caption, thead, tbody, tr, th, td {
   border-style: solid;
-  border-color: #e0e0e0;
+  border-color: transparent;
   border-width: 0; }
 
 caption {
@@ -253,10 +253,10 @@ tr, .ie7 td {
   border-bottom-width: 1px; }
 
 tr:nth-child(2n), tr.even {
-  background-color: #fff; }
+  background-color: transparent; }
 
 tr.odd, tr:nth-child(2n+1) {
-  background-color: #f5f2ed; }
+  background-color: transparent; }
 
 #sidebar-first tr.odd, #sidebar-first tr:nth-child(2n+1) {
   background-color: transparent; }
