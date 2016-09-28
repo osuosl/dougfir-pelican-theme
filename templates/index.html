@@ -57,8 +57,20 @@
 </div>
 
 {% if CASS_HOME_EXTRAS %}
-    {% set home_extras = pages[7] %}  <!-- Set to 6 to grab homepage extras --> 
-    {{ home_extras.content }}
+    {% for page in pages %} 
+        {% if page.tag == HOME_CONTENT %}
+            {{ page.content }}
+        {% endif %}
+    {% endfor %}
 {% endif %}
+
+{% if OSL_HOME_EXTRAS %}
+    {% for page in pages %} 
+        {% if page.tag == HOME_CONTENT %}
+            {{ page.content }}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 
 {% endblock %}
