@@ -58,7 +58,7 @@
 
 {% if CASS_HOME_EXTRAS %}
     {% for page in pages %} 
-        {% if page.tag == HOME_CONTENT %}
+        {% if page.tag == FRONTPAGE %}
             {{ page.content }}
         {% endif %}
     {% endfor %}
@@ -66,7 +66,7 @@
 
 {% if OSL_HOME_EXTRAS %}
     {% for page in pages %} 
-        {% if page.tag == HOME_CONTENT %}
+        {% if page.tag == FRONTPAGE %}
             {{ page.content }}
         {% endif %}
     {% endfor %}
