@@ -14,6 +14,11 @@ the OSU Open Source Lab. Several features are implemented in a very general way
 to allow for usage by different websites. These features require additional
 setup in the website themselves.
 
+### Settings
+
+**GOOGLE_ANALTYICS**: Set to your tracking code to activate Google Analytics
+
+
 ### Menu
 
 This theme creates a main menu in the following format:
