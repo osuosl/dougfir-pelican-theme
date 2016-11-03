@@ -2,7 +2,27 @@
     <div class="region region-sidebar-first">
         <div id="block-block-81" class="block block-block">
             <div class="content">
-                <p><a href="https://osuosl.org"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                {% if IS_OSL %}
+                    <p><a href="https://osuosl.org"><img src="{{ SITEURL }}/images/{{ OSLLOGO }}" style="padding:-5px" /></a></p>
+                {% endif %}
+                {% if IS_CASS %}
+                    <p><img src="{{ SITEURL }}/images/{{ CASSLOGO }}" style="padding:-5px" /></p>
+                    <ul class='menu'>
+                        <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" style="padding:-5px" /></a></p>
+                        <p>
+                            {{ SITENAME }}<br />
+                            {{ BUILDING }}<br />
+                            {{ STREET_ADDRESS }}<br />
+                            {{ CITY_ZIP }}<br>
+    
+                            {% for e in EMAIL %}
+                                <a href="mailto:{{ e.address }}">{{ e.address }}</a><br>
+                            {% endfor %}
+                            Phone: {{ PHONE_NUM }}
+                        </p>
+                        <li class='leaf'><a href='{{ DONATE_LINK }}'><i class='fa fa-gift' aria-hidden='true'></i> Make a Gift</a></li>
+                    </ul>
+                {% endif %}
             </div>
         </div>
         <div id="block-views-categories-block" class="block block-views">
@@ -13,6 +33,7 @@
                 <li class="views-row side-blog-list"><a href='/{{ article.url }}'>{{ article.title }}</a></li>
               {% endfor %}
             </ul>
+            {% if IS_OSL %}
             <ul class='menu'>
                 <li class='leaf'><a href="http://cass.oregonstate.edu" class="side-link">Center for Applied Systems and Software</a></li>
                 <li class='leaf'><a href="http://eecs.oregonstate.edu" class="side-link">Electrical Engineering and Computer Science</a></li>
@@ -34,6 +55,7 @@
         </div>
         <div>
           <h2><a href="http://lists.osuosl.org/mailman/listinfo/osl-newsletter">Newsletter Sign Up</a></h2>
+          {% endif %}
           <!-- <div class="content">
             <div class="view view-newletter-sign-up-form view-id-newletter_sign_up_form view-display-id-block view-dom-id-91a45f51554ee829dc6a37772f7a9f8d">
               <div class="view-content">

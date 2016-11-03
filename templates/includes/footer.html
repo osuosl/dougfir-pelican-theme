@@ -2,19 +2,26 @@
   <div class='container'>
     <div class='row'>
       <div class='span2 contact'>
-        <h3>Contact Info</h3>
+        {% if IS_OSL %}
+          <h3>Contact Info</h3>
+        {% endif %}
         <div class="content">
           <p>
-            OSU Open Source Lab<br />
-            Kerr Admin B211<br />
-            Corvallis, OR 97331<br />
-            General Inquiries:<br /><span style="color: #C34500;"><a href="mailto:info@osuosl.org">info@osuosl.org</a></span><br />
-            Support for Project Infrastructure<br /><span style="color: #C34500;"><a href="mailto:support@osuosl.org">support@osuosl.org</a></span><br />
-            Questions about Donations:<br /><span style="color: #C34500;"><a href="mailto:donations@osuosl.org">donations@osuosl.org</a></span>
+            {% if IS_OSL %}
+              {{ SITENAME }}<br />
+              {{ BUILDING }}<br />
+              {{ STREET_ADDRESS }}<br />
+              {{ CITY_ZIP }}<br />
+              {% for e in EMAIL %}
+              <span style="color: #C34500;"><a href="mailto:{{ e.address }}">{{ e.address }}</a></span><br />
+              {% endfor %}
+              Phone: {{ PHONE_NUM }}
+              <p><a href="{{ SITELOG_URL }}"><img src="{{ SITEURL }}/images/{{ SITELOGO }}" /></a></p>
+            {% endif %}
           </p>
         </div>
         <a href="http://oregonstate.edu/copyright">Copyright</a>
-        &copy;2015 Oregon State University<br />
+        &copy;2016 Oregon State University<br />
         <a href="http://oregonstate.edu/disclaimer">Disclaimer</a>
         </div
         <!-- Read the Pelican page list and create menu structure -->
