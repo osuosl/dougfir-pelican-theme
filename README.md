@@ -16,7 +16,7 @@ setup in the website themselves.
 
 ### Settings
 
-**GOOGLE_ANALTYICS**: Set to your tracking code to activate Google Analytics
+**GOOGLE_ANALYTICS**: Set to your tracking code to activate Google Analytics
 
 
 ### Menu
