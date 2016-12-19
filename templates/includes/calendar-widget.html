@@ -10,7 +10,7 @@ var SCOPES = [
     "https://www.googleapis.com/auth/calendar.readonly"
 ];
 
-var CALENDAR_ID = 'oregonstate.edu_s37pfj8sngtqk8s9fj66pslji8@group.calendar.google.com';
+var CALENDAR_ID = '{{CALENDAR_ID}}';
 
 /**
  * Bootstrap the Calendar API.
@@ -55,22 +55,130 @@ function listUpcomingEvents() {
     });
 }
 
+var monthNames = [
+    "January", "February", "March", "April", "May", "June", "July", "August",
+    "September", "October", "November", "December"
+];
+
+var monthAbbrs = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
 /**
  * Append an event to the widget.
  */
 function appendEvent(event) {
-    var p = document.createElement('p');
+    var container = document.createElement('div');
+    container.classList.add('upcoming-event');
 
     var when = event.start.dateTime;
     if (!when) {
         when = event.start.date;
     }
+    when = new Date(when);
 
-    p.append(document.createTextNode(event.summary + ' (' + when + ')'));
-    document.getElementById('upcoming-events').append(p);
+    var dateWidget = document.createElement('div');
+    dateWidget.classList.add('date');
+
+    var monthDiv = document.createElement('div');
+    monthDiv.classList.add('date-month');
+
+    var month = document.createElement('abbr');
+    month.title = monthNames[when.getMonth()];
+    month.append(document.createTextNode(monthAbbrs[when.getMonth()]));
+    monthDiv.append(month);
+    dateWidget.append(monthDiv);
+
+    var dayYearDiv = document.createElement('div');
+    dayYearDiv.classList.add('date-day-year');
+
+    var day = document.createElement('div');
+    day.classList.add('day');
+    day.append(document.createTextNode(when.getDay()));
+    dayYearDiv.append(day);
+
+    var year = document.createElement('div');
+    year.classList.add('year');
+    year.append(document.createTextNode(when.getFullYear()));
+    dayYearDiv.append(year);
+    dateWidget.append(dayYearDiv);
+    container.append(dateWidget);
+
+    var desc = document.createElement('div');
+    desc.classList.add('event-description');
+
+    var title = document.createElement('p');
+    title.classList.add('title');
+    title.append(document.createTextNode(event.summary));
+    desc.append(title);
+
+    desc.append(document.createTextNode(event.description));
+    container.append(desc);
+
+    document.getElementById('upcoming-events').append(container);
 }
 </script>
 <script src="https://apis.google.com/js/api.js" onload="gapi.load('client', start);"></script>
+
+<!-- Style tag needs to be temporary!!! -->
+<style>
+.upcoming-event {
+    clear: both;
+    margin-bottom: 1em;
+    overflow: hidden;
+    padding-bottom: 0.5em;
+}
+
+.upcoming-event .date {
+    float: left;
+    width: 66px;
+    text-align: center;
+}
+
+.date-month {
+    color: #fff;
+    background-color: #c34500;
+    font-size: 1.1em;
+    border-radius: 3px 3px 0 0;
+    text-transform: uppercase;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.date-month abbr {
+    border-bottom: none;
+    cursor: default;
+}
+
+.date-day-year {
+    border-radius: 0 0 3px 3px;
+    background-color: #f4f2ec;
+    padding-bottom: 3px;
+}
+
+.date-day-year .day {
+    color: #373737;
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+.date-day-year .year {
+    color: #373737;
+    font-size: 1.1em;
+    margin-top: 4px;
+}
+
+.event-description {
+    margin-left: 80px;
+}
+
+.upcoming-event .description .title {
+    line-height: 20px;
+    font-size: 14px;
+}
+
+</style>
 
 <div id="upcoming-events">
     <h4>Upcoming Events at CASS</h6>
