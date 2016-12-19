@@ -1,18 +1,23 @@
 <script type="text/javascript">
+
+var API_KEY = '';
+
 // Your Client ID can be retrieved from your project in the Google
 // Developer Console, https://console.developers.google.com
-var CLIENT_ID = '684263432830-mpp6gve37st81kkdl3is7edldp9onk68.apps.googleusercontent.com';
+var CLIENT_ID = '';
 
 var SCOPES = [
     "https://www.googleapis.com/auth/calendar.readonly"
 ];
+
+var CALENDAR_ID = 'oregonstate.edu_s37pfj8sngtqk8s9fj66pslji8@group.calendar.google.com';
 
 /**
  * Bootstrap the Calendar API.
  */
 function start() {
     gapi.client.init({
-        'apiKey': 'AIzaSyAw3K_cjVQEM8iXEPgyz1JgzLZzYoT47Vk',
+        'apiKey': API_KEY,
         'clientId': CLIENT_ID,
         'scope': SCOPES.join(' '),
         'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
@@ -26,7 +31,7 @@ function start() {
  */
 function listUpcomingEvents() {
     var request = gapi.client.calendar.events.list({
-        'calendarId': 'oregonstate.edu_s37pfj8sngtqk8s9fj66pslji8@group.calendar.google.com',
+        'calendarId': CALENDAR_ID,
         'timeMin': (new Date()).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
