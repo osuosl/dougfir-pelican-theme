@@ -41,36 +41,37 @@ function listUpcomingEvents() {
 
     request.execute(function(resp) {
         var events = resp.items;
-        appendPre('Upcoming events:');
 
         if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
-                var event = events[i];
-                var when = event.start.dateTime;
-                if (!when) {
-                    when = event.start.date;
-                }
-                appendPre(event.summary + ' (' + when + ')')
+                appendEvent(events[i]);
             }
         } else {
-            appendPre('No upcoming events found.');
+            var p = document.createElement('p');
+            p.append(document.createTextNode('No upcoming events.\n'));
+            document.getElementById('upcoming-events').append(p);
         }
 
     });
 }
 
 /**
- * Append a pre element to the body containing the given message
- * as its text node.
- *
- * @param {string} message Text to be placed in pre element.
+ * Append an event to the widget.
  */
-function appendPre(message) {
-    var pre = document.getElementById('output');
-    var textContent = document.createTextNode(message + '\n');
-    pre.appendChild(textContent);
+function appendEvent(event) {
+    var p = document.createElement('p');
+
+    var when = event.start.dateTime;
+    if (!when) {
+        when = event.start.date;
+    }
+
+    p.append(document.createTextNode(event.summary + ' (' + when + ')'));
+    document.getElementById('upcoming-events').append(p);
 }
 </script>
 <script src="https://apis.google.com/js/api.js" onload="gapi.load('client', start);"></script>
 
-<pre id="output"></pre>
+<div id="upcoming-events">
+    <h4>Upcoming Events at CASS</h6>
+</div>
