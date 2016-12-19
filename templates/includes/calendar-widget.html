@@ -1,0 +1,71 @@
+<script type="text/javascript">
+// Your Client ID can be retrieved from your project in the Google
+// Developer Console, https://console.developers.google.com
+var CLIENT_ID = '684263432830-mpp6gve37st81kkdl3is7edldp9onk68.apps.googleusercontent.com';
+
+var SCOPES = [
+    "https://www.googleapis.com/auth/calendar.readonly"
+];
+
+/**
+ * Bootstrap the Calendar API.
+ */
+function start() {
+    gapi.client.init({
+        'apiKey': 'AIzaSyAw3K_cjVQEM8iXEPgyz1JgzLZzYoT47Vk',
+        'clientId': CLIENT_ID,
+        'scope': SCOPES.join(' '),
+        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+    }).then(listUpcomingEvents);
+}
+
+/**
+ * Print the summary and start datetime/date of the next ten events in
+ * the authorized user's calendar. If no events are found an
+ * appropriate message is printed.
+ */
+function listUpcomingEvents() {
+    var request = gapi.client.calendar.events.list({
+        'calendarId': 'oregonstate.edu_s37pfj8sngtqk8s9fj66pslji8@group.calendar.google.com',
+        'timeMin': (new Date()).toISOString(),
+        'showDeleted': false,
+        'singleEvents': true,
+        'maxResults': 10,
+        'orderBy': 'startTime'
+    });
+
+    request.execute(function(resp) {
+        var events = resp.items;
+        appendPre('Upcoming events:');
+
+        if (events.length > 0) {
+            for (i = 0; i < events.length; i++) {
+                var event = events[i];
+                var when = event.start.dateTime;
+                if (!when) {
+                    when = event.start.date;
+                }
+                appendPre(event.summary + ' (' + when + ')')
+            }
+        } else {
+            appendPre('No upcoming events found.');
+        }
+
+    });
+}
+
+/**
+ * Append a pre element to the body containing the given message
+ * as its text node.
+ *
+ * @param {string} message Text to be placed in pre element.
+ */
+function appendPre(message) {
+    var pre = document.getElementById('output');
+    var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(textContent);
+}
+</script>
+<script src="https://apis.google.com/js/api.js" onload="gapi.load('client', start);"></script>
+
+<pre id="output"></pre>
