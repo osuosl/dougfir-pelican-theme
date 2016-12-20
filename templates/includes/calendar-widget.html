@@ -12,6 +12,8 @@ var SCOPES = [
 
 var CALENDAR_ID = '{{CALENDAR_ID}}';
 
+var NUM_EVENTS = {{NUM_EVENTS}};
+
 /**
  * Bootstrap the Calendar API.
  */
@@ -35,7 +37,7 @@ function listUpcomingEvents() {
         'timeMin': (new Date()).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
-        'maxResults': 10,
+        'maxResults': NUM_EVENTS,
         'orderBy': 'startTime'
     });
 
