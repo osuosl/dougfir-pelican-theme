@@ -109,10 +109,14 @@ function appendEvent(event) {
     var desc = document.createElement('div');
     desc.classList.add('event-description');
 
+    var titleLink = document.createElement('a');
+    titleLink.href = event.htmlLink;
+
     var title = document.createElement('p');
     title.classList.add('title');
     title.append(document.createTextNode(event.summary));
-    desc.append(title);
+    titleLink.append(title);
+    desc.append(titleLink);
 
     desc.append(document.createTextNode(event.description));
     container.append(desc);
