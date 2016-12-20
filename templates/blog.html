@@ -5,33 +5,35 @@
 <div class="item-list">
     <ul>
         {% for article in articles_page.object_list %}
-        <li class="views-row views-row-1 views-row-odd views-row-first">
-        <div class="node node-blog-post node-promoted clearfix">
-            <h2><a href='{{SITEURL}}/{{ article.url }}'>{{ article.title }}</a></h2>
-            <div class="content">
-                <div class="field field-name-field-featured-image field-type-image field-label-hidden">
-                    <div class="field-items">
-                        <div class="field-item even">
-                            <a href="{{ article.url }}">
-                                <img src="{{ article.title }}" width="400" height="278" alt="" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="field field-name-body field-type-text-with-summary field-label-hidden">
-                    <div class="field-items">
-                        <div class="field-item even">
-                            {{ article.content }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix">
-                <div class="field-label">Tags: {{ article.tags }}
-                </div>
-            </div>
-        </div>
-        </li>
+          {% if EXCLUDE_TAG not in article.tags %}
+          <li class="views-row views-row-1 views-row-odd views-row-first">
+          <div class="node node-blog-post node-promoted clearfix">
+              <h2><a href='{{SITEURL}}/{{ article.url }}'>{{ article.title }}</a></h2>
+              <div class="content">
+                  <div class="field field-name-field-featured-image field-type-image field-label-hidden">
+                      <div class="field-items">
+                          <div class="field-item even">
+                              <a href="{{ article.url }}">
+                                  <img src="{{ article.title }}" width="400" height="278" alt="" />
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                      <div class="field-items">
+                          <div class="field-item even">
+                              {{ article.content }}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-inline clearfix">
+                  <div class="field-label">Tags: {{ article.tags }}
+                  </div>
+              </div>
+          </div>
+          </li>
+          {% endif %}
         {% endfor %}
     </ul>
 </div>

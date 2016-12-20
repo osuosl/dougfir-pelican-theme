@@ -13,25 +13,27 @@
         {% endif %}
         <br>
         {% for article in (articles_page.object_list if articles_page else articles) %}
-            <h2><a href='/{{ article.url }}'>{{ article.title }}</a></h2>
-            <div class="field field-name-field-subtitle field-type-text field-label-hidden">
-              <div class="field-items">
-                <div class="field-item even">
-                  by {{ article.author }} <!-- on {{ article.date }} -->
-            </div></div></div>
-            <!-- Only display image if DISPLAY_IMAGE = True in pelicanconf -->
-            {% if article.img and DISPLAY_IMAGE %}
-                <div class="field field-name-field-featured-image field-type-image field-label-hidden">
-                  <div class="field-items">
-                    <div class="field-item even">
-                      <a href="/{{ article.url }}" class="active">
-                        <img src="/images/{{ article.img }}" width="400" height="494" alt="" />
-                      </a>
+          {% if EXCLUDE_TAG not in article.tags %}
+              <h2><a href='/{{ article.url }}'>{{ article.title }}</a></h2>
+              <div class="field field-name-field-subtitle field-type-text field-label-hidden">
+                <div class="field-items">
+                  <div class="field-item even">
+                    by {{ article.author }} <!-- on {{ article.date }} -->
+              </div></div></div>
+              <!-- Only display image if DISPLAY_IMAGE = True in pelicanconf -->
+              {% if article.img and DISPLAY_IMAGE %}
+                  <div class="field field-name-field-featured-image field-type-image field-label-hidden">
+                    <div class="field-items">
+                      <div class="field-item even">
+                        <a href="/{{ article.url }}" class="active">
+                          <img src="/images/{{ article.img }}" width="400" height="494" alt="" />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
+              {% endif %}
+              {{ article.summary }}
             {% endif %}
-            {{ article.summary }}
         {% endfor %}
 
         <ul class="pager">
