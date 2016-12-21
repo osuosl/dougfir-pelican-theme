@@ -11,12 +11,17 @@
         {% if IS_OSL %}
           <h1 class="title">{{ DEP_NAME }} {{NEWS_OR_BLOG }}</h1>
         {% endif %}
-        <br>
-        <h2>Blah!</h2>
-        {% for tag in tags %}
-            <h2>{{ tag }}</h2>
-        {% endfor %}
-
+        <div class="item-list">
+          <ul>
+          {% for tag in tags %}
+              <li class="views-row views-row-1 views-row-odd views-row-first">
+                <a href='{{ TAG_PREFIX }}/{{ tag[0] }}'>
+                  {{ tag[0] }}
+                </a>
+              </li>
+          {% endfor %}
+        </ul>
+      </div>
       </div>
     </div>
   </div>

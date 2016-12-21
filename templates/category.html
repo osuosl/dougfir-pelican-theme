@@ -35,7 +35,7 @@
               {{ article.summary }}
             {% endif %}
         {% endfor %}
-
+        {% if articles_page %}
         <ul class="pager">
           {% if articles_page.has_previous() %}
           <li class="pager-next"><a title="Go to next page" href="{{ SITEURL }}/{{ articles_previous_page.url }}">‹ newer</a></li>
@@ -44,6 +44,7 @@
           <li class="pager-next"><a title="Go to next page" href="{{ SITEURL }}/{{ articles_next_page.url }}">older ›</a></li>
           {% endif %}
         </ul>
+        {% endif %}
       </div>
     </div>
   </div>

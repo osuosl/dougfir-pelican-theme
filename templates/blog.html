@@ -38,7 +38,7 @@
     </ul>
 </div>
 
-{% if DEFAULT_PAGINATION and articles_paginator.num_pages > 1 %}
+{% if articles_page %}
 <div class="paginator">
     {% if articles_page.has_previous() %}
     <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;</a>
