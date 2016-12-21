@@ -14,11 +14,13 @@
         <div class="item-list">
           <ul>
           {% for tag in tags %}
-              <li class="views-row views-row-1 views-row-odd views-row-first">
-                <a href='{{ TAG_PREFIX }}/{{ tag[0] }}'>
-                  {{ tag[0] }}
-                </a>
-              </li>
+            {% if tag[0] != EXCLUDE_TAG %}
+                <li class="views-row views-row-1 views-row-odd views-row-first">
+                  <a href='{{ TAG_PREFIX }}/{{ tag[0] }}'>
+                    {{ tag[0] }}
+                  </a>
+                </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>
