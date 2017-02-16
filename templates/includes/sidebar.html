@@ -37,7 +37,7 @@
                                 {% if article.img != '' %}
                                     <p><img src="{{ SITEURL }}/images/{{ article.img }}" style="padding:-5px"></img>
                                 {% endif %}
-                                <p><a href="{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
+                                <p><a href="{{ SITEURL }}{{ article.url }}" style="font-size:18px; text-decoration:none">{{ article.title }}</a></p>
                                 <p>{{ article.summary }}</p><br>
                             {% endif %}
                         {% endfor %}
