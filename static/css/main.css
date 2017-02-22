@@ -4583,4 +4583,12 @@ table {
 .m-icon-link i {
   display: inline !important; }
 
+table.powerdev-tbl tr:nth-child(even), tr.even {
+   background-color: #fff;
+ }
+
+table.powerdev-tbl tr:nth-child(odd), tr.odd {
+  background-color: #f5f2ed;
+  }
+
 /*# sourceMappingURL=main.css.map */
