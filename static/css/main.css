@@ -52,8 +52,6 @@ h1 {
 /* 'College of Engineering' menu link */
 a.parent, .parent {
   text-decoration: none;
-  /*font-style: italic;*/
-  font-family: 'Open sans', sans-serif;
   font-size: 18px;
   color: #fff;
   /*margin-top: 9px;
@@ -219,8 +217,9 @@ ul.quicktabs-tabs.quicktabs-style-basic li a:hover, ul.quicktabs-tabs.quicktabs-
   color: #fff; }
 
 input.form-submit {
-  background: linear-gradient(to bottom, #c34500 0%, #983600 100%) repeat scroll 0 0 transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  /*background: linear-gradient(to bottom, #c34500 0%, #983600 100%) repeat scroll 0 0 transparent;*/
+  background: #000;
+  box-shadow: none;
   color: #fff;
   border: medium none;
   padding: 10px;
@@ -229,7 +228,8 @@ input.form-submit {
   margin-right: 10px; }
 
 input.form-submit:hover, input.form-submit:active, input.form-submit:focus {
-  background: -moz-linear-gradient(center top, #802e01 0%, #8c3201 100%) repeat scroll 0 0 transparent;
+  /*background: -moz-linear-gradient(center top, #802e01 0%, #8c3201 100%) repeat scroll 0 0 transparent;*/
+  background: #dc4405;
   box-shadow: none; }
 
 input[type="image"] {
@@ -282,7 +282,7 @@ table.plain tr:nth-child(2n), table.plain tr:nth-child(2n+1), table.plain captio
   float: none;
   background-color: transparent;
   z-index: 200;
-  height: 40px;
+  height: 30px;
   border-radius: 4px;
   font-size: 14px; }
 
@@ -2740,7 +2740,7 @@ textarea {
   h2, h3 {
     page-break-after: avoid; } }
 a {
-  color: #c34500;
+  color: #dc4405;
   text-decoration: underline; }
 
 h1 a:hover, h1 a:focus {
