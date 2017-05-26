@@ -1424,6 +1424,7 @@ td.checkbox, th.checkbox {
   line-height: 22px;
   padding-top: 7px;
   padding-bottom: 2px;
+  padding-left: 2px;
   font-weight: 500;
   text-decoration: none; }
 
