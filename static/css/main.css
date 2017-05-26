@@ -1419,11 +1419,12 @@ td.checkbox, th.checkbox {
 #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title a, #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title {
   color: #dc4405;
   font-family: "Impact",sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   /*font-weight: bold;*/
   line-height: 22px;
   padding-top: 7px;
   padding-bottom: 2px;
+  font-weight: 500;
   text-decoration: none; }
 
 #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title a:hover, #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title a:active, #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title a:focus {
