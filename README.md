@@ -18,6 +18,34 @@ setup in the website themselves.
 
 **GOOGLE_ANALYTICS**: Set to your tracking code to activate Google Analytics
 
+**GOOGLE CALENDAR**:
+
+To use the Google Calendar widget, you will need three things: an API Key, an
+OAuth Client ID, and a Calendar ID.
+
+To generate the API Key and Client ID:
+1. Go to https://console.developers.google.com/.
+2. Create a new project if you don't already have one.
+3. Go to Library, select or search for the Google Calendar API, and enable it.
+4. Go to Credentials.
+5. Click Create Credentials, and click API Key.
+  a. For testing, simply copy the API key into your pelicanconf.py as the value
+     GAPPS_API_KEY.
+  b. For production, click Restrict Key, and add a restriction according to the
+     prompt. Then copy the key to your pelicanconf.py as the value GAPPS_API_KEY.
+6. Get back to the Credentials screen, then click Create Credentials, then OAuth
+   Client ID. Select Web Application, and enter the URI of your website (or
+   localhost for testing). Copy the Client ID to the pelicanconf.py under the
+   value GAPPS_CLIENT_ID.
+
+For the calendar ID, it will be in the form of an email address. The easiest way
+to get it is from the calendar's HTML URI, in which it will be the value of
+the ``src`` parameter (make sure you replace ``%40`` with ``@``).
+
+For example, if the URI is ``https://calendar.google.com/calendar/embed?src=oregonstate.edu_s37pfj8sngtqk8s9fj66pslji8%40group.calendar.google.com&ctz=America/Los_Angeles``, the Calendar ID will be
+``oregonstate.edu_s37pfj8sngtqk8s9fj66pslji8@group.calendar.google.com``.
+
+Add that to your pelicanconf.py under the value CALENDAR_ID.
 
 ### Menu
 

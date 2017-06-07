@@ -1,0 +1,194 @@
+<script type="text/javascript">
+
+var API_KEY = '{{GAPPS_API_KEY}}';
+
+// Your Client ID can be retrieved from your project in the Google
+// Developer Console, https://console.developers.google.com
+var CLIENT_ID = '{{GAPPS_CLIENT_ID}}';
+
+var SCOPES = [
+    "https://www.googleapis.com/auth/calendar.readonly"
+];
+
+var CALENDAR_ID = '{{CALENDAR_ID}}';
+
+var NUM_EVENTS = {{NUM_EVENTS}};
+
+/**
+ * Bootstrap the Calendar API.
+ */
+function start() {
+    gapi.client.init({
+        'apiKey': API_KEY,
+        'clientId': CLIENT_ID,
+        'scope': SCOPES.join(' '),
+        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+    }).then(listUpcomingEvents);
+}
+
+/**
+ * Print the summary and start datetime/date of the next ten events in
+ * the authorized user's calendar. If no events are found an
+ * appropriate message is printed.
+ */
+function listUpcomingEvents() {
+    var request = gapi.client.calendar.events.list({
+        'calendarId': CALENDAR_ID,
+        'timeMin': (new Date()).toISOString(),
+        'showDeleted': false,
+        'singleEvents': true,
+        'maxResults': NUM_EVENTS,
+        'orderBy': 'startTime'
+    });
+
+    request.execute(function(resp) {
+        var events = resp.items;
+
+        if (events.length > 0) {
+            for (i = 0; i < events.length; i++) {
+                appendEvent(events[i]);
+            }
+        } else {
+            var p = document.createElement('p');
+            p.append(document.createTextNode('No upcoming events.\n'));
+            document.getElementById('upcoming-events').append(p);
+        }
+
+    });
+}
+
+var monthNames = [
+    "January", "February", "March", "April", "May", "June", "July", "August",
+    "September", "October", "November", "December"
+];
+
+var monthAbbrs = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+/**
+ * Append an event to the widget.
+ */
+function appendEvent(event) {
+    var container = document.createElement('div');
+    container.classList.add('upcoming-event');
+
+    var when = event.start.dateTime;
+    if (!when) {
+        when = event.start.date;
+    }
+    when = new Date(when);
+
+    var dateWidget = document.createElement('div');
+    dateWidget.classList.add('date');
+
+    var monthDiv = document.createElement('div');
+    monthDiv.classList.add('date-month');
+
+    var month = document.createElement('abbr');
+    month.title = monthNames[when.getMonth()];
+    month.append(document.createTextNode(monthAbbrs[when.getMonth()]));
+    monthDiv.append(month);
+    dateWidget.append(monthDiv);
+
+    var dayYearDiv = document.createElement('div');
+    dayYearDiv.classList.add('date-day-year');
+
+    var day = document.createElement('div');
+    day.classList.add('day');
+    day.append(document.createTextNode(when.getDay()));
+    dayYearDiv.append(day);
+
+    var year = document.createElement('div');
+    year.classList.add('year');
+    year.append(document.createTextNode(when.getFullYear()));
+    dayYearDiv.append(year);
+    dateWidget.append(dayYearDiv);
+    container.append(dateWidget);
+
+    var desc = document.createElement('div');
+    desc.classList.add('event-description');
+
+    var titleLink = document.createElement('a');
+    titleLink.href = event.htmlLink;
+
+    var title = document.createElement('p');
+    title.classList.add('title');
+    title.append(document.createTextNode(event.summary));
+    titleLink.append(title);
+    desc.append(titleLink);
+
+    desc.append(document.createTextNode(event.description));
+    container.append(desc);
+
+    document.getElementById('upcoming-events').append(container);
+}
+</script>
+<script src="https://apis.google.com/js/api.js" onload="gapi.load('client', start);"></script>
+
+<!-- Style tag needs to be temporary!!! -->
+<style>
+.upcoming-event {
+    clear: both;
+    margin-bottom: 1em;
+    overflow: hidden;
+    padding-bottom: 0.5em;
+}
+
+.upcoming-event .date {
+    float: left;
+    width: 66px;
+    text-align: center;
+}
+
+.date-month {
+    color: #fff;
+    background-color: #c34500;
+    font-size: 1.1em;
+    border-radius: 3px 3px 0 0;
+    text-transform: uppercase;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.date-month abbr {
+    border-bottom: none;
+    cursor: default;
+}
+
+.date-day-year {
+    border-radius: 0 0 3px 3px;
+    background-color: #f4f2ec;
+    padding-bottom: 3px;
+}
+
+.date-day-year .day {
+    color: #373737;
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+.date-day-year .year {
+    color: #373737;
+    font-size: 1.1em;
+    margin-top: 4px;
+}
+
+.event-description {
+    margin-left: 80px;
+}
+
+.upcoming-event .description .title {
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+</style>
+
+<div id="upcoming-events">
+    <a href="https://calendar.google.com/calendar/embed?src={{CALENDAR_ID}}" target="_blank">
+        <h4>Upcoming Events at CASS</h4>
+    </a>
+</div>
