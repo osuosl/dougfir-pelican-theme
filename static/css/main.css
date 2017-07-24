@@ -19,7 +19,7 @@
   font-weight: normal;
   font-style: normal; }
 html {
-  background-color: #252525;
+  background-color: #292929;
   font-size: 100%; }
 
 body {
@@ -117,12 +117,11 @@ div.content {
   font-size: 14px;
   line-height: 18px;
   padding: 20px 0 20px 20px;
-  background: #252525;
-  background: -webkit-linear-gradient(top, #39393a 0%, #252525 100%);
-  background: -moz-linear-gradient(center top, #39393a 0%, #252525 100%) repeat scroll 0 0 transparent;
-  background: linear-gradient(to bottom, #39393a 0%, #252525 100%);
   min-height: 148px;
-  border-top: 4px solid #dbd6d0; }
+  border-top: 4px solid #dbd6d0;
+  background: url(/theme/img/repeatable-treeline.png) #373737 repeat-x left bottom;
+  border-color: #dc4405;
+}
 
 #footer p {
   font-size: 14px; }
@@ -352,6 +351,7 @@ ul.nice-menu-down li ul li ul {
   padding-right: 32px; }*/
 
 #main-menu .nice-menu > li.menuparent:hover > a, #main-menu .nice-menu > li.menuparent > a:hover, #main-menu .nice-menu > li.menuparent > a:active, #main-menu .nice-menu > li.menuparent > a:focus {
+  color: #fff;
   background-color: rgba(0,0,0,0.85); }
 
 #main-menu .nice-menu > li.over > a, #main-menu .nice-menu > li > a:hover, #main-menu .nice-menu > li > a:active, #main-menu .nice-menu > li > a:focus, #main-menu .menu li a:hover, #main-menu .menu li a:active, #main-menu .menu li a:focus {
@@ -637,7 +637,7 @@ img.logo {
     background-color: #373737; }
 
   #osu-top-hat {
-    height: 40px; }
+    height: 100px; }
 
   #osu-top-hat .search-terms, #osu-top-hat .search-terms:focus {
     width: 160px;
@@ -2183,7 +2183,7 @@ input.password-confirm, input.password-field {
     background-color: #373737; }
 
   #osu-top-hat {
-    height: 40px; }
+    height: 100px; }
 
   #osu-top-hat .search-terms, #osu-top-hat .search-terms:focus {
     transition: none 0s ease 0s;
