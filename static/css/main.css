@@ -532,14 +532,7 @@ img.logo {
   }
 
   #osu-top-hat {
-    background-color: #bb4200;
-    background-image: -moz-linear-gradient(top, #c34500, #ae3d00);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c34500), to(#ae3d00));
-    background-image: -webkit-linear-gradient(top, #c34500, #ae3d00);
-    background-image: -o-linear-gradient(top, #c34500, #ae3d00);
-    background-image: linear-gradient(to bottom, #c34500, #ae3d00);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc34500', endColorstr='#ffae3d00', GradientType=0);
+    background-color: #dc4405;
     height: auto;
     border-bottom: none;
     text-align: left; }
@@ -2087,9 +2080,7 @@ input.password-confirm, input.password-field {
     z-index: 999; }
 
   #osu-top-hat {
-    background-color: #bb4200;
-    background-image: linear-gradient(to bottom, #c34500, #ae3d00);
-    background-repeat: repeat-x;
+    background-color: #dc4405;
     border-bottom: medium none;
     height: auto;
     text-align: left; }
