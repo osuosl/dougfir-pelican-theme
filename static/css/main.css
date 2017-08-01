@@ -514,7 +514,10 @@ img.logo {
   body {
     padding: 0; }
 
-  #osu-top-hat .logo, #main-menu {
+  #osu-top-hat .logo {
+    display: block;}
+
+  #main-menu {
     display: none; }
 
   #osu-top-hat .logo .menu, #main-menu .menu, #osu-top-hat .logo .nice-menu, #main-menu .nice-menu {
@@ -527,10 +530,6 @@ img.logo {
     z-index: 999;
     top: 40px; }
 
-  #osu-top-hat .logo {
-    padding-top: 10px;
-  }
-
   #osu-top-hat {
     background-color: #dc4405;
     height: auto;
@@ -542,7 +541,7 @@ img.logo {
 
   #osu-top-hat a.tag {
     margin-left: 0;
-    float: none; }
+    float: left; }
 
   #osu-top-hat ul.menu li:hover, #osu-top-hat ul.menu li:active, #osu-top-hat ul.menu li:focus {
     background-color: transparent;
@@ -554,10 +553,13 @@ img.logo {
     border-radius: 0; }
 
   .mobile-header {
-    display: inline-block;
+    display: none;
     color: #fff;
     font-weight: bold;
     font-size: 16px; }
+
+  div.mobile-content {
+    width: 100%; }
 
   #header h1 {
     padding: 4px 8px 2px 10px;
@@ -577,7 +579,6 @@ img.logo {
     padding-left: 10px; }
 
   #features {
-    padding-top: 6px;
     background-color: #fff; }
 
   #block-views-feature-story-block .view-feature-story .more-link {
@@ -620,6 +621,9 @@ img.logo {
 @media (max-width: 767px) {
   #admin-menu, #main-menu {
     display: none; }
+
+  a.parent.title- + h1 {
+    margin-left: 10px;}
 
   a.m-icon-link {
     padding: 11px 13px 9px;
@@ -2068,7 +2072,10 @@ input.password-confirm, input.password-field {
   body {
     padding: 0; }
 
-  #osu-top-hat .logo, #main-menu {
+  #osu-top-hat .logo {
+    display: block;}
+
+  #main-menu {
     display: none; }
 
   #osu-top-hat .logo .menu, #main-menu .menu, #osu-top-hat .logo .nice-menu, #main-menu .nice-menu {
@@ -2089,7 +2096,7 @@ input.password-confirm, input.password-field {
     padding: 10px 0 0 10px; }
 
   #osu-top-hat a.tag {
-    float: none;
+    float: left;
     margin-left: 0; }
 
   #osu-top-hat ul.menu li:hover, #osu-top-hat ul.menu li:active, #osu-top-hat ul.menu li:focus {
@@ -2101,7 +2108,7 @@ input.password-confirm, input.password-field {
 
   .mobile-header {
     color: #fff;
-    display: inline-block;
+    display: none;
     font-size: 16px;
     font-weight: bold; }
 
@@ -2123,8 +2130,7 @@ input.password-confirm, input.password-field {
     padding-left: 10px; }
 
   #features {
-    background-color: #fff;
-    padding-top: 6px; }
+    background-color: #fff; }
 
   #block-views-feature-story-block .view-feature-story .more-link {
     background: none repeat scroll 0 0 #f4f2ec;
@@ -4542,22 +4548,29 @@ table {
     display: none; }
 
   .mobile-content {
+    width: 90%;
     margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     display: block;
     height: auto;
-    overflow: visible; }
+    overflow: hidden;}
+
+  div#block-views-feature-story-block {
+    display: none; }
 
   .mobile-title {
     display: block;
     text-align: center; }
 
   .summary-image {
+    position:relative;
     display: block;
-    width: auto;
-    top: 4.5em; }
+    width: 100%;
+    top: 0;
+    transform: translate(0, 0);
+    height: auto;}
 
   .span10 {
     width: 100vw; }
@@ -4573,8 +4586,7 @@ table {
     display: block; }
 
   #features {
-    height: auto;
-    min-height: 300px; } }
+    height: auto; } }
 .nosidebar {
   width: calc(100% - 20px) !important; }
 
