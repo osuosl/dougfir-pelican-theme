@@ -499,6 +499,21 @@ img {
   padding-right: 10px;
   padding-bottom: 10px; }
 
+#boldly-venturing-beyond-the-lab tbody tr td {
+  float:left;
+  width: 30%;
+}
+
+#boldly-venturing-beyond-the-lab tbody tr td img {
+  width: 98%;
+}
+
+@media (max-width: 560px) {
+  #boldly-venturing-beyond-the-lab tbody tr td {
+    float:left;
+    width: 100%;
+  } }
+
 @media (max-width: 480px) {
   body {
     padding: 0; }
