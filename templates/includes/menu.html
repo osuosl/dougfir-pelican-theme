@@ -1,10 +1,19 @@
-<div id='page-wrapper' class='container'>
-<div id='header' class='row-fluid'>
-    <a class="parent title-{{COLOR}}" href={{ PARENT_ORG_URL }}>{{ PARENT_ORG }}</a>
-    <h1><a class="title-{{COLOR}}" href='/'>{{ SITENAME }}</a></h1>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<div style="background: #000; color: #fff; font-family: 'Open sans',sans-serif">
+  <a style="display: inline-block; margin-left: -300px;" class="parent title-{{COLOR}}" href={{ PARENT_ORG_URL }}>{{ PARENT_ORG }}</a>
+  »
+  <h1 style="display: inline-block; font-size: 25px">
+      <a class="title-{{COLOR}}" href='/'>{{ SITENAME }}</a>
+  </h1>
 </div>
 
+<div id='page-wrapper' class='container'>
+<!--<div id='header' class='row-fluid'>-->
+<!--    <a class="parent title-{{COLOR}}" href={{ PARENT_ORG_URL }}>{{ PARENT_ORG }}</a>
+    <h1><a class="title-{{COLOR}}" href='/'>{{ SITENAME }}</a></h1>-->
+<!--</div>-->
 <!-- Read the Pelican page list and create menu structure -->
+
 {% set pelpages = (pages | menu_filter(DIRECT_TEMPLATE_INFO)) %}
 
 <ul id="mobile-menu" role="navigation">
@@ -49,15 +58,15 @@
                         <ul>
                             {% for child in page['children'] %}
                             {% if child['children'] %}
-                            <li class="menuparent"><a href={{ child['link'] }}>{{ child['name'] }}</a>
+                            <li class="menuparent"><a style="color: #fff; text-transform: none" href={{ child['link'] }}>{{ child['name'] }}</a>
                                 <ul>
                                     {% for grandchild in child['children'] %}
-                                    <li><a href={{ grandchild['link'] }}>{{ grandchild['name'] }}</a></li>
+                                    <li><a style="color: #fff; text-transform: none" href={{ grandchild['link'] }}>{{ grandchild['name'] }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
                             {% else %}
-                            <li><a href={{ child['link'] }}>{{ child['name'] }}</a></li>
+                            <li><a style="color: #fff; text-transform: none" href={{ child['link'] }}>{{ child['name'] }}</a></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
