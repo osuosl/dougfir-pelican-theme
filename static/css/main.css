@@ -4477,7 +4477,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   font-family: "EksjaExtremesRegular";
   font-style: normal;
   font-weight: normal;
-  src: local(":"), url("http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff") format("woff"), url("http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf") format("truetype"), url("http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont") format("svg"); }
+  src: local(":"), url("https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff") format("woff"), url("https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf") format("truetype"), url("https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont") format("svg"); }
 #block-block-81 {
   margin-bottom: -10px;
   padding-bottom: 0em !important; }
