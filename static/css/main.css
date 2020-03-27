@@ -14,8 +14,8 @@
 
 @font-face {
   font-family: 'EksjaExtremesRegular';
-  src: url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.eot);
-  src: local(":"), url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff) format("woff"), url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf) format("truetype"), url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont) format("svg");
+  src: url(https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.eot);
+  src: local(":"), url(https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff) format("woff"), url(https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf) format("truetype"), url(https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont) format("svg");
   font-weight: normal;
   font-style: normal; }
 html {
@@ -1603,16 +1603,16 @@ div.n td, #querystats td {
 #osu-top-hat a.tag:hover, #osu-top-hat a.tag:active, #osu-top-hat a.tag:focus {
   background: none repeat scroll 0 0 transparent; }
 
-#osu-top-hat ul.menu li a[href^="http://oregonstate.edu/main/online-services"]::before {
+#osu-top-hat ul.menu li a[href^="https://oregonstate.edu/main/online-services"]::before {
   content: "�"; }
 
-#osu-top-hat ul.menu li a[href^="http://oregonstate.edu/campusmap"]::before {
+#osu-top-hat ul.menu li a[href^="https://oregonstate.edu/campusmap"]::before {
   content: "A"; }
 
-#osu-top-hat ul.menu li a[href^="http://calendar.oregonstate.edu"]::before {
+#osu-top-hat ul.menu li a[href^="https://calendar.oregonstate.edu"]::before {
   content: "s"; }
 
-#osu-top-hat ul.menu li a[href^="http://osulibrary.oregonstate.edu"]::before {
+#osu-top-hat ul.menu li a[href^="https://osulibrary.oregonstate.edu"]::before {
   content: "-"; }
 
 #osu-top-hat ul.menu li a[href^="https://securelb.imodules.com/s/359/campaign/"]::before, #osu-top-hat ul.menu li a[href*="osufoundation.org/"]::before {
@@ -4477,7 +4477,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   font-family: "EksjaExtremesRegular";
   font-style: normal;
   font-weight: normal;
-  src: local(":"), url("http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff") format("woff"), url("http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf") format("truetype"), url("http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont") format("svg"); }
+  src: local(":"), url("https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff") format("woff"), url("https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf") format("truetype"), url("https://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont") format("svg"); }
 #block-block-81 {
   margin-bottom: -10px;
   padding-bottom: 0em !important; }

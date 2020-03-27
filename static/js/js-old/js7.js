@@ -1,7 +1,7 @@
 /*!
- * Copyright (c) 2006 Brandon Aaron (http://brandonaaron.net)
- * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php).
- * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ * Copyright (c) 2006 Brandon Aaron (https://brandonaaron.net)
+ * Dual licensed under the MIT (https://www.opensource.org/licenses/mit-license.php).
+ * and GPL (https://www.opensource.org/licenses/gpl-license.php) licenses.
  *
  * $LastChangedDate: 2007-06-19 20:25:28 -0500 (Tue, 19 Jun 2007) $
  * $Rev: 2111 $
@@ -11,7 +11,7 @@
 (function($){$.fn.bgIframe=$.fn.bgiframe=function(s){if($.browser.msie&&parseInt($.browser.version)<=6){s=$.extend({top:'auto',left:'auto',width:'auto',height:'auto',opacity:true,src:'javascript:false;'},s||{});var prop=function(n){return n&&n.constructor==Number?n+'px':n;},html='<iframe class="bgiframe"frameborder="0"tabindex="-1"src="'+s.src+'"'+'style="display:block;position:absolute;z-index:-1;'+(s.opacity!==false?'filter:Alpha(Opacity=\'0\');':'')+'top:'+(s.top=='auto'?'expression(((parseInt(this.parentNode.currentStyle.borderTopWidth)||0)*-1)+\'px\')':prop(s.top))+';'+'left:'+(s.left=='auto'?'expression(((parseInt(this.parentNode.currentStyle.borderLeftWidth)||0)*-1)+\'px\')':prop(s.left))+';'+'width:'+(s.width=='auto'?'expression(this.parentNode.offsetWidth+\'px\')':prop(s.width))+';'+'height:'+(s.height=='auto'?'expression(this.parentNode.offsetHeight+\'px\')':prop(s.height))+';'+'"/>';return this.each(function(){if($('> iframe.bgiframe',this).length==0)this.insertBefore(document.createElement(html),this.firstChild);});}return this;};if(!$.browser.version)$.browser.version=navigator.userAgent.toLowerCase().match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/)[1];})(jQuery);;
 /*!
 * hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
-* <http://cherne.net/brian/resources/jquery.hoverIntent.html>
+* <https://cherne.net/brian/resources/jquery.hoverIntent.html>
 * 
 * @param  f  onMouseOver function || An object with configuration options
 * @param  g  onMouseOut function  || Nothing (use configuration options object)
@@ -24,10 +24,10 @@
  * Copyright (c) 2008 Joel Birch
  *
  * Dual licensed under the MIT and GPL licenses:
- * 	http://www.opensource.org/licenses/mit-license.php
- * 	http://www.gnu.org/licenses/gpl.html
+ * 	https://www.opensource.org/licenses/mit-license.php
+ * 	https://www.gnu.org/licenses/gpl.html
  *
- * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
+ * CHANGELOG: https://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
  */
 (function($){
   $.fn.superfish = function(op){
@@ -162,7 +162,7 @@
  * @file
  * Behaviours for the Nice Menus module. This uses Superfish 1.4.8.
  *
- * @link http://users.tpg.com.au/j_birch/plugins/superfish
+ * @link https://users.tpg.com.au/j_birch/plugins/superfish
  */
 
 (function ($) {
@@ -187,7 +187,7 @@
         });
 
         // Add in Brandon Aaron’s bgIframe plugin for IE select issues.
-        // http://plugins.jquery.com/node/46/release
+        // https://plugins.jquery.com/node/46/release
         $(this).find('ul').bgIframe({opacity:false});
 
         $('ul.nice-menu ul').css('display', 'none');
