@@ -1,14 +1,14 @@
 
 /*!
  * jQuery JavaScript Library v1.4.4
- * https://jquery.com/
+ * http://jquery.com/
  *
  * Copyright 2010, John Resig
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * https://jquery.org/license
+ * http://jquery.org/license
  *
  * Includes Sizzle.js
- * https://sizzlejs.com/
+ * http://sizzlejs.com/
  * Copyright 2010, The Dojo Foundation
  * Released under the MIT, BSD, and GPL Licenses.
  *
@@ -170,11 +170,11 @@ b],f.body["scroll"+b],f.documentElement["scroll"+b],f.body["offset"+b],f.documen
 
 /**
  * jQuery Once Plugin v1.2
- * https://plugins.jquery.com/project/once
+ * http://plugins.jquery.com/project/once
  *
  * Dual licensed under the MIT and GPL licenses:
- *   https://www.opensource.org/licenses/mit-license.php
- *   https://www.gnu.org/licenses/gpl.html
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
  */
 
 (function ($) {
@@ -258,7 +258,7 @@ jQuery.noConflict();
 /**
  * Override jQuery.fn.init to guard against XSS attacks.
  *
- * See https://bugs.jquery.com/ticket/9521
+ * See http://bugs.jquery.com/ticket/9521
  */
 var jquery_init = $.fn.init;
 $.fn.init = function (selector, context, rootjQuery) {

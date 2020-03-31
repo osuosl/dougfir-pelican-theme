@@ -47,17 +47,17 @@ jQuery(document).ready(function($) {
 'video audio source track'.replace(/\w+/g, function(n){ document.createElement(n); });
 /**
 * Kaltura HTML5 Library v1.6.12.21c 
-* Library Page https://www.kaltura.org/project/HTML5_Video_Media_JavaScript_Library
+* Library Page http://www.kaltura.org/project/HTML5_Video_Media_JavaScript_Library
 * 
 * Common configuration options see: 
-* https://html5video.org/wiki/Kaltura_SaaS_FAQ
+* http://html5video.org/wiki/Kaltura_SaaS_FAQ
 *
 * Whats in this version of Kaltura HTML5
-* https://html5video.org/wiki/Kaltura_HTML5_Release_Notes
+* http://html5video.org/wiki/Kaltura_HTML5_Release_Notes
 * 
 */
 
-window['SCRIPT_LOADER_URL']='https://cdnakmi.kaltura.org/apis/html5versions/1.6.12.21/ResourceLoader.php';window['KALTURA_LOADER_VERSION']='1.6.12.21c';(function(){"use strict";var kWidget={readyWidgets:{},readyCallbacks:[],destroyedWidgets:{},perWidgetCallback:{},setup:function(){var _this=this;this.checkEnvironment();this.overrideFlashEmbedMethods();this.proxyJsCallbackready();this.domReady(function(){_this.proxyJsCallbackready();});this.domReady(function(){_this.rewriteObjectTags();});},checkEnvironment:function(){if(document.URL.indexOf('forceMobileHTML5')!==-1&&!mw.getConfig('disableForceMobileHTML5')){mw.setConfig('forceMobileHTML5',true);}
+window['SCRIPT_LOADER_URL']='http://cdnakmi.kaltura.org/apis/html5versions/1.6.12.21/ResourceLoader.php';window['KALTURA_LOADER_VERSION']='1.6.12.21c';(function(){"use strict";var kWidget={readyWidgets:{},readyCallbacks:[],destroyedWidgets:{},perWidgetCallback:{},setup:function(){var _this=this;this.checkEnvironment();this.overrideFlashEmbedMethods();this.proxyJsCallbackready();this.domReady(function(){_this.proxyJsCallbackready();});this.domReady(function(){_this.rewriteObjectTags();});},checkEnvironment:function(){if(document.URL.indexOf('forceMobileHTML5')!==-1&&!mw.getConfig('disableForceMobileHTML5')){mw.setConfig('forceMobileHTML5',true);}
 var ua=navigator.userAgent;var ieMatch=ua.match(/MSIE\s([0-9])/);if(ieMatch&&parseInt(ieMatch[1])<9){mw.setConfig('Kaltura.ForceFlashOnDesktop',true);}
 if(ua.indexOf('BlackBerry')!=-1){mw.setConfig('EmbedPlayer.DisableVideoTagSupport',true);mw.setConfig('EmbedPlayer.NotPlayableDownloadLink',true);}
 if(window.jQuery&&!mw.versionIsAtLeast('1.3.2',jQuery.fn.jquery)){kWidget.log('Kaltura HTML5 works best with jQuery 1.3.2 or above');mw.setConfig('EmbedPlayer.EnableIframeApi',false);}
@@ -211,4 +211,4 @@ var getAction=function(inx){if(ruleSet.actions&&ruleSet.actions[inx]){return rul
 return flashMode;};for(var i in ruleSet.rules){var rule=ruleSet.rules[i];if(rule.match){if(ua.indexOf(rule.match)!==-1)
 return getAction(i);}else if(rule.regMatch){if(ua.match(eval(rule.regMatch)))
 return getAction(i);}}
-return flashMode;};mw.setConfig('debug',false);mw.setConfig('Kaltura.UseManifestUrls',true);mw.setConfig('Kaltura.Protocol','http');mw.setConfig('Kaltura.ServiceUrl','https://cdnapi.kaltura.com');mw.setConfig('Kaltura.ServiceBase','/api_v3/index.php?service=');mw.setConfig('Kaltura.CdnUrl','https://cdnbakmi.kaltura.com');mw.setConfig('Kaltura.StatsServiceUrl','https://stats.kaltura.com');mw.setConfig('Kaltura.IframeRewrite',true);mw.setConfig('EmbedPlayer.EnableIframeApi',true);mw.setConfig('EmbedPlayer.EnableIpadHTMLControls',true);mw.setConfig('EmbedPlayer.UseFlashOnAndroid',true);mw.setConfig('Kaltura.LoadScriptForVideoTags',true);mw.setConfig('Kaltura.AllowIframeRemoteService',true);mw.setConfig('Kaltura.UseAppleAdaptive',true);mw.setConfig('Kaltura.EnableEmbedUiConfJs',false);;
+return flashMode;};mw.setConfig('debug',false);mw.setConfig('Kaltura.UseManifestUrls',true);mw.setConfig('Kaltura.Protocol','http');mw.setConfig('Kaltura.ServiceUrl','http://cdnapi.kaltura.com');mw.setConfig('Kaltura.ServiceBase','/api_v3/index.php?service=');mw.setConfig('Kaltura.CdnUrl','http://cdnbakmi.kaltura.com');mw.setConfig('Kaltura.StatsServiceUrl','http://stats.kaltura.com');mw.setConfig('Kaltura.IframeRewrite',true);mw.setConfig('EmbedPlayer.EnableIframeApi',true);mw.setConfig('EmbedPlayer.EnableIpadHTMLControls',true);mw.setConfig('EmbedPlayer.UseFlashOnAndroid',true);mw.setConfig('Kaltura.LoadScriptForVideoTags',true);mw.setConfig('Kaltura.AllowIframeRemoteService',true);mw.setConfig('Kaltura.UseAppleAdaptive',true);mw.setConfig('Kaltura.EnableEmbedUiConfJs',false);;

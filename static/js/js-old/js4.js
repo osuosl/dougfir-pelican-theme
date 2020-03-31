@@ -51,11 +51,11 @@ Drupal.behaviors.initColorboxDefaultStyle = {
 ;
 /*!
  * jQuery Cycle Plugin (with Transition Definitions)
- * Examples and documentation at: https://jquery.malsup.com/cycle/
+ * Examples and documentation at: http://jquery.malsup.com/cycle/
  * Copyright (c) 2007-2013 M. Alsup
  * Version: 3.0.3 (11-JUL-2013)
  * Dual licensed under the MIT and GPL licenses.
- * https://jquery.malsup.com/license.html
+ * http://jquery.malsup.com/license.html
  * Requires: jQuery v1.7.1 or later
  */
 ;(function($, undefined) {
@@ -99,7 +99,7 @@ $.fn.cycle = function(options, arg2) {
 			});
 			return this;
 		}
-		// is your DOM ready?  https://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+		// is your DOM ready?  http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 		log('terminating; zero elements found by selector' + ($.isReady ? '' : ' (DOM not ready)'));
 		return this;
 	}
@@ -411,7 +411,7 @@ function buildOptions($cont, $slides, els, options, o) {
 		
 	// stretch container
 	var reshape = (opts.containerResize || opts.containerResizeHeight) && $cont.innerHeight() < 1;
-	if (reshape) { // do this only if container has no size https://tinyurl.com/da2oa9
+	if (reshape) { // do this only if container has no size http://tinyurl.com/da2oa9
 		var maxw = 0, maxh = 0;
 		for(var j=0; j < els.length; j++) {
 			var $e = $(els[j]), e = $e[0], w = $e.outerWidth(), h = $e.outerHeight();
@@ -1124,12 +1124,12 @@ $.fn.cycle.defaults = {
 /*!
  * jQuery Cycle Plugin Transition Definitions
  * This script is a plugin for the jQuery Cycle Plugin
- * Examples and documentation at: https://malsup.com/jquery/cycle/
+ * Examples and documentation at: http://malsup.com/jquery/cycle/
  * Copyright (c) 2007-2010 M. Alsup
  * Version:	 2.73
  * Dual licensed under the MIT and GPL licenses:
- * https://www.opensource.org/licenses/mit-license.php
- * https://www.gnu.org/licenses/gpl.html
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
  */
 (function($) {
 "use strict";
@@ -2473,7 +2473,7 @@ $(document).ready(function() {
 function isCrossDomain(hostname, crossDomains) {
   /**
    * jQuery < 1.6.3 bug: $.inArray crushes IE6 and Chrome if second argument is
-   * `null` or `undefined`, https://bugs.jquery.com/ticket/10076,
+   * `null` or `undefined`, http://bugs.jquery.com/ticket/10076,
    * https://github.com/jquery/jquery/commit/a839af034db2bd934e4d4fa6758a3fed8de74174
    *
    * @todo: Remove/Refactor in D8
