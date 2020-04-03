@@ -1689,16 +1689,16 @@ div.n td,#querystats td {
 #osu-top-hat a.tag:hover,#osu-top-hat a.tag:active,#osu-top-hat a.tag:focus {
 	background: none repeat scroll 0 0 transparent;
 }
-#osu-top-hat ul.menu li a[href^="http://oregonstate.edu/main/online-services"]::before {
+#osu-top-hat ul.menu li a[href^="https://oregonstate.edu/main/online-services"]::before {
 	content: "�";
 }
-#osu-top-hat ul.menu li a[href^="http://oregonstate.edu/campusmap"]::before {
+#osu-top-hat ul.menu li a[href^="https://oregonstate.edu/campusmap"]::before {
 	content: "A";
 }
-#osu-top-hat ul.menu li a[href^="http://calendar.oregonstate.edu"]::before {
+#osu-top-hat ul.menu li a[href^="https://calendar.oregonstate.edu"]::before {
 	content: "s";
 }
-#osu-top-hat ul.menu li a[href^="http://osulibrary.oregonstate.edu"]::before {
+#osu-top-hat ul.menu li a[href^="https://osulibrary.oregonstate.edu"]::before {
 	content: "-";
 }
 #osu-top-hat ul.menu li a[href^="https://securelb.imodules.com/s/359/campaign/"]::before,#osu-top-hat ul.menu li a[href*="osufoundation.org/"]::before {
